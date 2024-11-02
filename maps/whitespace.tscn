@@ -1,18 +1,21 @@
-[gd_scene load_steps=6 format=3 uid="uid://bwv2f6fbkywst"]
+[gd_scene load_steps=7 format=3 uid="uid://bwv2f6fbkywst"]
 
 [ext_resource type="MeshLibrary" uid="uid://dowqdt8jfp4q7" path="res://libraries/mesh_lib.tres" id="1_0t6v7"]
 [ext_resource type="PackedScene" uid="uid://bnjxnutgn6xij" path="res://scenes/hero.tscn" id="2_i2fdu"]
+[ext_resource type="Texture2D" uid="uid://bidxvjjtq8mx3" path="res://textures/skybox.png" id="3_qc7sa"]
 
-[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_4hihh"]
+[sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yphkv"]
+panorama = ExtResource("3_qc7sa")
 
-[sub_resource type="Sky" id="Sky_5yt8f"]
-sky_material = SubResource("PanoramaSkyMaterial_4hihh")
+[sub_resource type="Sky" id="Sky_56llg"]
+sky_material = SubResource("PanoramaSkyMaterial_yphkv")
 
 [sub_resource type="Environment" id="Environment_445j3"]
 background_mode = 2
-sky = SubResource("Sky_5yt8f")
+sky = SubResource("Sky_56llg")
 
 [node name="whitespace" type="Node3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.0159779, 0, -0.0108185)
 
 [node name="GridMap" type="GridMap" parent="."]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00563049, -0.0144331, 0.00845957)
@@ -26,7 +29,7 @@ data = {
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.71864, 1.82654, -1.30857)
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, -0.952661, 0.304033, 0, -0.304033, -0.952661, 0, 0, 0)
+transform = Transform3D(0.59908, 0.648862, 0.469129, 0, -0.585906, 0.810379, 0.80069, -0.485482, -0.351004, 6.09856, 10.2764, -8.33604)
 shadow_enabled = true
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
