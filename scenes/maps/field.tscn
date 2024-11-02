@@ -2,7 +2,7 @@
 
 [ext_resource type="Texture2D" uid="uid://bidxvjjtq8mx3" path="res://textures/skybox.png" id="1_et7ni"]
 [ext_resource type="MeshLibrary" uid="uid://dowqdt8jfp4q7" path="res://libraries/Pixel_Art_Top_Down_Lib.tres" id="2_v7x12"]
-[ext_resource type="PackedScene" uid="uid://bnjxnutgn6xij" path="res://scenes/hero.tscn" id="3_comwf"]
+[ext_resource type="PackedScene" uid="uid://bnjxnutgn6xij" path="res://scenes/characters/Hero/hero.tscn" id="3_comwf"]
 [ext_resource type="PackedScene" uid="uid://dxjhx12g7kket" path="res://scenes/props/bush_1.tscn" id="4_kky3g"]
 [ext_resource type="PackedScene" uid="uid://c66dkrutrlo4h" path="res://scenes/props/bush_2.tscn" id="5_o0bnx"]
 [ext_resource type="PackedScene" uid="uid://vstu3kq2g8gl" path="res://scenes/props/tree_1.tscn" id="6_vvd5q"]

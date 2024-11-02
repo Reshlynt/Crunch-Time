@@ -1,7 +1,7 @@
 [gd_scene load_steps=7 format=3 uid="uid://bwv2f6fbkywst"]
 
 [ext_resource type="MeshLibrary" uid="uid://dowqdt8jfp4q7" path="res://libraries/Pixel_Art_Top_Down_Lib.tres" id="1_jsqry"]
-[ext_resource type="PackedScene" uid="uid://bnjxnutgn6xij" path="res://scenes/hero.tscn" id="2_nyhbs"]
+[ext_resource type="PackedScene" uid="uid://bnjxnutgn6xij" path="res://scenes/characters/Hero/hero.tscn" id="2_nyhbs"]
 [ext_resource type="Texture2D" uid="uid://bidxvjjtq8mx3" path="res://textures/skybox.png" id="3_f7d64"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yphkv"]
