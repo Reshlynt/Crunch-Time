@@ -1,4 +1,4 @@
-[gd_scene load_steps=14 format=3 uid="uid://bg80cm414s0tj"]
+[gd_scene load_steps=15 format=3 uid="uid://bg80cm414s0tj"]
 
 [ext_resource type="Texture2D" uid="uid://bidxvjjtq8mx3" path="res://textures/skybox.png" id="1_et7ni"]
 [ext_resource type="MeshLibrary" uid="uid://dowqdt8jfp4q7" path="res://libraries/Pixel_Art_Top_Down_Lib.tres" id="2_v7x12"]
@@ -10,6 +10,7 @@
 [ext_resource type="PackedScene" uid="uid://dykucyargiyqg" path="res://scenes/props/tree_3.tscn" id="8_7t4u7"]
 [ext_resource type="PackedScene" uid="uid://b5dgdn43pd422" path="res://scenes/props/tuft_1.tscn" id="9_xlytr"]
 [ext_resource type="PackedScene" uid="uid://4lvsxeusduua" path="res://scenes/props/tuft_2.tscn" id="10_3sv8c"]
+[ext_resource type="PackedScene" uid="uid://bex5ptq8axj2f" path="res://scenes/characters/Mari/Mari.tscn" id="11_fpg5m"]
 
 [sub_resource type="PanoramaSkyMaterial" id="PanoramaSkyMaterial_yphkv"]
 panorama = ExtResource("1_et7ni")
@@ -66,6 +67,9 @@ transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.39966, 1.05002, -3.60268)
 
 [node name="Tuft_3" parent="." instance=ExtResource("10_3sv8c")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -7.82198, 1.05002, 5.33024)
+
+[node name="CharacterBody3D" parent="." instance=ExtResource("11_fpg5m")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -8.85636, 1.05533, -4.30267)
 
 [node name="bush3" parent="." instance=ExtResource("4_kky3g")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.52813, 3.21291, -3.62001)

@@ -1,8 +1,8 @@
 [gd_scene load_steps=2 format=3 uid="uid://b0iquwv0pfyrj"]
 
 [sub_resource type="CylinderShape3D" id="CylinderShape3D_mdm6s"]
-height = 0.331153
-radius = 0.16318
+height = 1.38676
+radius = 0.074154
 
 [node name="PropBase" type="Sprite3D"]
 billboard = 2
