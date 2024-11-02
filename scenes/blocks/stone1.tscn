@@ -1,0 +1,7 @@
+[gd_scene load_steps=3 format=3 uid="uid://c535plnd6jv1k"]
+
+[ext_resource type="PackedScene" uid="uid://0crhrvp1g57j" path="res://scenes/blocks/base/base_block.tscn" id="1_48fgn"]
+[ext_resource type="Material" uid="uid://eun2j2w78mni" path="res://materials/stone1.tres" id="2_lskcd"]
+
+[node name="stone1" instance=ExtResource("1_48fgn")]
+surface_material_override/0 = ExtResource("2_lskcd")
