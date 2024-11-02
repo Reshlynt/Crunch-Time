@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://chdnyets66oh5"
-path="res://.godot/imported/HeroRun.png-85ef51779aca66edd498df750f735991.ctex"
+uid="uid://r47qp63tab4x"
+path="res://.godot/imported/TX Plant.png-2eda033488af3b27057e49a9ecf13d4b.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheets/HeroRun.png"
-dest_files=["res://.godot/imported/HeroRun.png-85ef51779aca66edd498df750f735991.ctex"]
+source_file="res://spritesheets/propTextures/TX Plant.png"
+dest_files=["res://.godot/imported/TX Plant.png-2eda033488af3b27057e49a9ecf13d4b.ctex"]
 
 [params]
 

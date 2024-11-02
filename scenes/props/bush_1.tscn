@@ -1,0 +1,14 @@
+[gd_scene load_steps=4 format=3 uid="uid://dxjhx12g7kket"]
+
+[ext_resource type="PackedScene" uid="uid://b0iquwv0pfyrj" path="res://scenes/props/base/prop_base.tscn" id="1_34p7w"]
+[ext_resource type="Texture2D" uid="uid://c3j4kktnnbit1" path="res://spritesheets/propTextures/bush1.png" id="2_hckwe"]
+
+[sub_resource type="SphereShape3D" id="SphereShape3D_8ccbs"]
+radius = 0.205717
+
+[node name="bush1" instance=ExtResource("1_34p7w")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.212915, 0)
+texture = ExtResource("2_hckwe")
+
+[node name="CollisionShape3D" parent="StaticBody3D" index="0"]
+shape = SubResource("SphereShape3D_8ccbs")

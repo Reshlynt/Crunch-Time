@@ -1,15 +1,15 @@
 extends CharacterBody3D
 
 
-const SPEED = 5.0
+const SPEED = 2.5
 const JUMP_VELOCITY = 4.5
 
 const RUN_FRAMES = 8
 const WALK_FRAMES = 12
 
 
-var RUN_SHEET = load("res://spritesheets/HeroRun.png")
-var MAIN_SHEET = load("res://spritesheets/HeroMain.png")
+var RUN_SHEET = load("res://spritesheets/characters/Hero/HeroRun.png")
+var MAIN_SHEET = load("res://spritesheets/characters/Hero/HeroMain.png")
 
 @export var animation_frame = 0
 var anim_row = 0

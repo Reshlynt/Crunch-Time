@@ -1,11 +1,12 @@
 [gd_scene load_steps=8 format=3 uid="uid://bnjxnutgn6xij"]
 
 [ext_resource type="Script" path="res://scenes/hero.gd" id="1_wdskf"]
-[ext_resource type="Texture2D" uid="uid://baqp0a3axe615" path="res://spritesheets/HeroMain.png" id="2_a4g5m"]
+[ext_resource type="Texture2D" uid="uid://baqp0a3axe615" path="res://spritesheets/characters/Hero/HeroMain.png" id="2_a4g5m"]
 [ext_resource type="Script" path="res://scenes/spring_arm_3d.gd" id="3_ey6rw"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0iwpi"]
-height = 1.39418
+radius = 0.147897
+height = 0.836268
 
 [sub_resource type="Animation" id="Animation_kl7wc"]
 length = 0.001
@@ -46,16 +47,17 @@ _data = {
 }
 
 [node name="Hero" type="CharacterBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00755835, 0.00408331, 0)
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
 script = ExtResource("1_wdskf")
 
 [node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.360364, 0, 0, 0, 0.360364, 0, 0, 0, 0.360364, 0, 0.0901313, 0)
 shape = SubResource("CapsuleShape3D_0iwpi")
 
 [node name="Sprite3D" type="Sprite3D" parent="."]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.00816679, -0.00408345, 0)
-pixel_size = 0.05
+transform = Transform3D(0.99919, 0, 0, 0, 0.99919, 0, 0, 0, 0.99919, 0.00816679, 0.097582, 0)
 billboard = 2
+alpha_cut = 1
 texture_filter = 0
 texture = ExtResource("2_a4g5m")
 hframes = 12

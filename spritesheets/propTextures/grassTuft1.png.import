@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://baqp0a3axe615"
-path="res://.godot/imported/HeroMain.png-d3b496b5e718f0136071a782a6a74cda.ctex"
+uid="uid://by0121ieji2hc"
+path="res://.godot/imported/grassTuft1.png-62be1c20b8e3f78ec3f0afeb7d401d7c.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://spritesheets/HeroMain.png"
-dest_files=["res://.godot/imported/HeroMain.png-d3b496b5e718f0136071a782a6a74cda.ctex"]
+source_file="res://spritesheets/propTextures/grassTuft1.png"
+dest_files=["res://.godot/imported/grassTuft1.png-62be1c20b8e3f78ec3f0afeb7d401d7c.ctex"]
 
 [params]
 
