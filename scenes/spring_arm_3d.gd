@@ -1,9 +1,9 @@
 extends SpringArm3D
 
-@export var zoom_inc = 1
+const ZOOM_INC = 1
 
-const ZOOM_NEAR = 1
-const ZOOM_FAR = 4
+const MAX_ZOOM_NEAR = 1
+const MAX_ZOOM_FAR = 8
 
 func _physics_process(delta: float) -> void:
 	handle_camera()
@@ -37,14 +37,17 @@ func handle_camera():
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_SINE)
 		tween.set_ease(Tween.EASE_OUT)
-		tween.tween_property(self,"rotation:y", PI, 0.5)
+		tween.tween_property(self,"rotation:y", 0, 0.5)
 		
 
 func handle_zoom():
-	if Input.is_action_just_pressed("zoom_in") and spring_length >= ZOOM_NEAR:
+	if Input.is_action_just_pressed("zoom_in") and spring_length >= MAX_ZOOM_NEAR:
 		
 		# TODO might need to tone down this value
-		var newlength = spring_length - zoom_inc
+		var newlength = spring_length - ZOOM_INC
+		
+		# make sure that it doesn't go out of bounds
+		if newlength < MAX_ZOOM_NEAR: newlength = MAX_ZOOM_NEAR
 		
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_SINE)
@@ -55,10 +58,12 @@ func handle_zoom():
 			newlength,
 			0.5
 		)
-	elif Input.is_action_just_pressed("zoom_out") and spring_length < ZOOM_FAR:
+	elif Input.is_action_just_pressed("zoom_out") and spring_length < MAX_ZOOM_FAR:
 		
-		# TODO might need to tone down this value
-		var newlength = spring_length + zoom_inc
+		var newlength = spring_length + ZOOM_INC
+		
+		# make sure that it doesn't go out of bounds
+		if newlength >= MAX_ZOOM_FAR: newlength = MAX_ZOOM_FAR
 		
 		var tween = create_tween()
 		tween.set_trans(Tween.TRANS_SINE)
