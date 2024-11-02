@@ -1,6 +1,6 @@
 [gd_scene load_steps=2 format=3 uid="uid://b2hdfrl22otll"]
 
-[ext_resource type="Texture2D" uid="uid://cw86b3c1s4rgx" path="res://xmlIsGarbage.webp" id="1_h14p4"]
+[ext_resource type="Texture2D" uid="uid://cw86b3c1s4rgx" path="res://other/xmlIsGarbage.webp" id="1_h14p4"]
 
 [node name="Node3D" type="Node3D"]
 
