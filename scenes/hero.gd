@@ -41,7 +41,7 @@ func _physics_process(delta: float) -> void:
 		velocity.x = move_toward(velocity.x, 0, SPEED)
 		velocity.z = move_toward(velocity.z, 0, SPEED)
 		
-	handle_walk_animation(Vector2(direction.x,direction.z))
+	handle_walk_animation(input_dir)
 	
 	move_and_slide()
 
