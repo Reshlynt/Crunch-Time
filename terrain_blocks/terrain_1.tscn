@@ -1,0 +1,47 @@
+[gd_scene load_steps=5 format=3 uid="uid://bcklr6ppvts8x"]
+
+[sub_resource type="PlaneMesh" id="PlaneMesh_hhy45"]
+size = Vector2(100, 20)
+
+[sub_resource type="BoxShape3D" id="BoxShape3D_hdi3b"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_4ogvj"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1vtg1"]
+data = PackedVector3Array(50, 0, 10, -50, 0, 10, 50, 0, -10, -50, 0, 10, -50, 0, -10, 50, 0, -10)
+
+[node name="Terrain_0" type="MeshInstance3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, -8.77896)
+mesh = SubResource("PlaneMesh_hhy45")
+
+[node name="Block_0" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.52194, 0.5, -1.10403)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block_0"]
+shape = SubResource("BoxShape3D_hdi3b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Block_0"]
+mesh = SubResource("BoxMesh_4ogvj")
+
+[node name="Block_1" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.177822, 0.5, 4.11802)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block_1"]
+shape = SubResource("BoxShape3D_hdi3b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Block_1"]
+mesh = SubResource("BoxMesh_4ogvj")
+
+[node name="Block_2" type="StaticBody3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.14925, 0.5, -2.33696)
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="Block_2"]
+shape = SubResource("BoxShape3D_hdi3b")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="Block_2"]
+mesh = SubResource("BoxMesh_4ogvj")
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_1vtg1")
