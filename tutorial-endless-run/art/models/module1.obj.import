@@ -1,0 +1,22 @@
+[remap]
+
+importer="wavefront_obj"
+importer_version=1
+type="Mesh"
+uid="uid://cgqmvb4gnajoc"
+path="res://.godot/imported/module1.obj-4bede5b8195dfe0bf79abaaac65caca5.mesh"
+
+[deps]
+
+files=["res://.godot/imported/module1.obj-4bede5b8195dfe0bf79abaaac65caca5.mesh"]
+
+source_file="res://tutorial-endless-run/art/models/module1.obj"
+dest_files=["res://.godot/imported/module1.obj-4bede5b8195dfe0bf79abaaac65caca5.mesh", "res://.godot/imported/module1.obj-4bede5b8195dfe0bf79abaaac65caca5.mesh"]
+
+[params]
+
+generate_tangents=true
+scale_mesh=Vector3(1, 1, 1)
+offset_mesh=Vector3(0, 0, 0)
+optimize_mesh=true
+force_disable_mesh_compression=false

@@ -1,0 +1,24 @@
+[gd_scene load_steps=8 format=3 uid="uid://ss2byc32cgub"]
+
+[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/level.gd" id="1_hveqe"]
+[ext_resource type="PackedScene" uid="uid://dcaxwvenlvou" path="res://tutorial-endless-run/art/modules/module-1.tscn" id="2_watwo"]
+[ext_resource type="PackedScene" uid="uid://do702vixa3mmc" path="res://tutorial-endless-run/art/modules/module-2.tscn" id="3_ps64d"]
+[ext_resource type="PackedScene" uid="uid://c083wwofxbomb" path="res://tutorial-endless-run/art/modules/module-3.tscn" id="4_ag6ga"]
+[ext_resource type="PackedScene" uid="uid://hq0mmtx5fq5n" path="res://tutorial-endless-run/art/modules/module-5.tscn" id="5_af1nf"]
+[ext_resource type="PackedScene" uid="uid://c8ela1a4fd1wr" path="res://tutorial-endless-run/art/modules/module-4.tscn" id="6_reta4"]
+[ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://tutorial-endless-run/art/scene/player.tscn" id="7_tfn16"]
+
+[node name="main" type="Node3D"]
+
+[node name="Level" type="Node3D" parent="."]
+script = ExtResource("1_hveqe")
+modules = Array[PackedScene]([ExtResource("2_watwo"), ExtResource("3_ps64d"), ExtResource("4_ag6ga"), ExtResource("6_reta4"), ExtResource("5_af1nf")])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(0.00626207, 0.233564, -0.972321, -0.0015042, 0.972341, 0.233559, 0.999979, 0, 0.00644019, 0, 0, 0)
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.00912135, 0.553178, -0.833014, 0.0028852, 0.833059, 0.553176, 0.999954, 0.0026423, -0.00919465, -6.087, 5, 0)
+
+[node name="player" parent="." instance=ExtResource("7_tfn16")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.26505, 0)

@@ -1,0 +1,19 @@
+[gd_scene load_steps=4 format=3 uid="uid://bmpt3aib2l53i"]
+
+[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/player.gd" id="1_kkc12"]
+
+[sub_resource type="CapsuleMesh" id="CapsuleMesh_oeaee"]
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_slnhb"]
+
+[node name="player" type="CharacterBody3D"]
+script = ExtResource("1_kkc12")
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
+mesh = SubResource("CapsuleMesh_oeaee")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="."]
+shape = SubResource("CapsuleShape3D_slnhb")
+
+[node name="DeathSense" type="RayCast3D" parent="."]
+target_position = Vector3(1, 0, 0)
