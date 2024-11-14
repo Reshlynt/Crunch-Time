@@ -5,6 +5,9 @@
 [node name="Node3D" type="Node3D"]
 
 [node name="player" parent="." instance=ExtResource("1_i5jlq")]
+jump_height = 100.0
+jump_time_to_peak = 0.5
+jump_time_to_descent = 0.4
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(0.0190753, 0, -0.999818, 0, 1, 0, 0.999818, 0, 0.0190753, -8.64809, 0, -0.235704)
