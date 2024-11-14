@@ -5,14 +5,18 @@ const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
 @onready var death_sense: RayCast3D = $DeathSense
 
-const JUMP_VEL = 7
+const JUMP_VEL = 25
 var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
 
 # Goal: Make discrete movements. left, right, and center.
 func _physics_process(delta: float) -> void:
 	_player_move()
+	_jump()
+	velocity.y -= grav * delta
+	print_debug(velocity)
 	if death_sense.is_colliding():
 		_death()
+	move_and_slide()
 
 # operates player movement
 func _player_move():
@@ -29,7 +33,13 @@ func _player_move():
 		curPos -= 1
 	
 	# Set the z position
-	position.z = positions[curPos] 
+	position.z = positions[curPos]
 
 func _death():
 	get_tree().reload_current_scene()
+
+# Jump.
+func _jump():
+	if (Input.is_action_just_pressed("jump") and is_on_floor()):
+		velocity.y = JUMP_VEL
+	
