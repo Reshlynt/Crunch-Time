@@ -5,41 +5,49 @@ const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
 @onready var death_sense: RayCast3D = $DeathSense
 
-const JUMP_VEL = 25
-var grav = ProjectSettings.get_setting("physics/2d/default_gravity")
+@export var jump_height : float
+@export var jump_time_to_peak : float
+@export var jump_time_to_descent : float
+
+@onready var jump_velocity : float = ((2.0 * jump_height) / jump_time_to_peak)
+@onready var jump_gravity : float = ((2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak))
+@onready var fall_gravity : float = ((2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
 
 # Goal: Make discrete movements. left, right, and center.
 func _physics_process(delta: float) -> void:
-	_player_move()
-	_jump()
-	velocity.y -= grav * delta
-	print_debug(velocity)
+	velocity.y -= _get_gravity() * delta
+	player_move(delta)
+	if Input.is_action_just_pressed("jump"):
+		jump()
 	if death_sense.is_colliding():
-		_death()
+		death()
 	move_and_slide()
 
 # operates player movement
-func _player_move():
+func player_move(delta: float):
 	# Determine what input input has just been pressed.
 	if (Input.is_action_just_pressed("move_left")):
 		curPos -= 1
 	elif(Input.is_action_just_pressed("move_right")):
 		curPos += 1
 	
-	# Check the boundaries. A bit archaic, but it works.
+	# Restrain to boundaries. A bit archaic, but it works.
 	if (curPos < 0):
 		curPos += 1
 	elif(curPos > 2):
 		curPos -= 1
 	
-	# Set the z position
-	position.z = positions[curPos]
+	# Set the z position via linear interpolation
+	position.z = lerpf(position.z, positions[curPos], delta*20)
 
-func _death():
+# Reload scene
+func death():
 	get_tree().reload_current_scene()
 
-# Jump.
-func _jump():
-	if (Input.is_action_just_pressed("jump") and is_on_floor()):
-		velocity.y = JUMP_VEL
-	
+# Return gravity
+func _get_gravity() -> float:
+	return jump_gravity if velocity.y > 0.0 else fall_gravity
+
+# Allow jumping
+func jump():
+	velocity.y = jump_velocity
