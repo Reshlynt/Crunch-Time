@@ -6,7 +6,9 @@ var speed = 10
 var rng = RandomNumberGenerator.new()
 const CAMERA_POS = -20
 
-# I don't know why this is the solution to this problem.
+# Error discovered: Spawn buildings in the level manager is a bad idea.
+# Buildings are not part of the obstacle that a player should avoid, they are natually
+# part of a module and thus
 func _ready() -> void:
 	spawnBuilding()
 
