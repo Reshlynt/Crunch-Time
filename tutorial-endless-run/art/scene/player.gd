@@ -17,7 +17,7 @@ const RIGHT: Vector2 = Vector2(1,0)
 func _physics_process(delta: float) -> void:
 	velocity.y -= _get_gravity() * delta
 	player_move(delta)
-	if Input.is_action_just_pressed("jump"):
+	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 	if death_sense.is_colliding():
 		death()
