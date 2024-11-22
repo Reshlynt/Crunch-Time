@@ -1,11 +1,13 @@
-[gd_scene load_steps=10 format=3 uid="uid://ss2byc32cgub"]
+[gd_scene load_steps=12 format=3 uid="uid://ss2byc32cgub"]
 
 [ext_resource type="Script" path="res://tutorial-endless-run/art/scene/level.gd" id="1_hveqe"]
+[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/main.gd" id="1_hvvp6"]
 [ext_resource type="PackedScene" uid="uid://dcaxwvenlvou" path="res://tutorial-endless-run/art/modules/module-1.tscn" id="2_watwo"]
 [ext_resource type="PackedScene" uid="uid://do702vixa3mmc" path="res://tutorial-endless-run/art/modules/module-2.tscn" id="3_ps64d"]
 [ext_resource type="PackedScene" uid="uid://c083wwofxbomb" path="res://tutorial-endless-run/art/modules/module-3.tscn" id="4_ag6ga"]
 [ext_resource type="PackedScene" uid="uid://hq0mmtx5fq5n" path="res://tutorial-endless-run/art/modules/module-5.tscn" id="5_af1nf"]
 [ext_resource type="PackedScene" uid="uid://c8ela1a4fd1wr" path="res://tutorial-endless-run/art/modules/module-4.tscn" id="6_reta4"]
+[ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://tutorial-endless-run/art/scene/pauseMenu.tscn" id="8_k1fec"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_6t8t4"]
 
@@ -22,6 +24,7 @@ volumetric_fog_density = 0.0692
 volumetric_fog_albedo = Color(0.654232, 0.654232, 0.654232, 1)
 
 [node name="main" type="Node3D"]
+script = ExtResource("1_hvvp6")
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("1_hveqe")
@@ -37,3 +40,6 @@ transform = Transform3D(-0.00912135, 0.553178, -0.833014, 0.0028852, 0.833059, 0
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_k6itf")
+
+[node name="pauseMenu" parent="." instance=ExtResource("8_k1fec")]
+visible = false
