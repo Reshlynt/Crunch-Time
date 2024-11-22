@@ -31,7 +31,7 @@ text = "Play Field"
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_play_poc_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Demo" to="." method="_on_play_demo_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
