@@ -1,0 +1,25 @@
+[gd_scene load_steps=8 format=3 uid="uid://do702vixa3mmc"]
+
+[ext_resource type="Script" path="res://tutorial-endless-run/art/modules/module.gd" id="1_1nnqp"]
+[ext_resource type="ArrayMesh" uid="uid://f5d5qjnyqap3" path="res://tutorial-endless-run/art/models/module2.obj" id="1_135by"]
+[ext_resource type="PackedScene" uid="uid://dmgp6edj65a0w" path="res://tutorial-endless-run/art/modules/small_building.tscn" id="2_f4s8a"]
+[ext_resource type="Material" uid="uid://wa5nc8v30bpm" path="res://tutorial-endless-run/art/material/grey-material.tres" id="2_ibr6l"]
+[ext_resource type="Material" uid="uid://chy76t11vf1rv" path="res://tutorial-endless-run/art/material/red-material.tres" id="3_61i5u"]
+[ext_resource type="PackedScene" uid="uid://cuivsgugo57ra" path="res://tutorial-endless-run/art/modules/tall_building.tscn" id="3_ggua3"]
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_bt2rf"]
+data = PackedVector3Array(-3, 0.2, -4.6667, -3, -0.2, -4.6667, -3, 0.2, -5, -3, 0.2, -5, -3, -0.2, -4.6667, -3, -0.2, -5, -3, 0.2, -5, -3, -0.2, -5, 3, 0.2, -5, 3, 0.2, -5, -3, -0.2, -5, 3, -0.2, -5, 3, 0.2, 4.6667, 3, -0.2, 4.6667, 3, 0.2, 5, 3, 0.2, 5, 3, -0.2, 4.6667, 3, -0.2, 5, 3, 0.2, 5, 3, -0.2, 5, -3, 0.2, 5, -3, 0.2, 5, 3, -0.2, 5, -3, -0.2, 5, 3, -0.2, 4.6667, -3, -0.2, 4.6667, 3, -0.2, 5, 3, -0.2, 5, -3, -0.2, 4.6667, -3, -0.2, 5, 3, 0.2, 5, -3, 0.2, 5, 3, 2, 5, 3, 2, 5, -3, 0.2, 5, -3, 2, 5, -3, 0.2, -4.6667, -3, 0.2, -5, -3, 2, -4.6667, -3, 2, -4.6667, -3, 0.2, -5, -3, 2, -5, -3, 0.2, -4.6667, 3, 0.2, -4.6667, -3, 0.2, 4.6667, -3, 0.2, 4.6667, 3, 0.2, -4.6667, 3, 0.2, 4.6667, 3, -0.2, -5, -3, -0.2, -5, 3, -0.2, -4.6667, 3, -0.2, -4.6667, -3, -0.2, -5, -3, -0.2, -4.6667, 3, -0.2, -4.6667, -3, -0.2, -4.6667, 3, -0.2, 4.6667, 3, -0.2, 4.6667, -3, -0.2, -4.6667, -3, -0.2, 4.6667, 3, 0.2, -5, 3, -0.2, -5, 3, 0.2, -4.6667, 3, 0.2, -4.6667, 3, -0.2, -5, 3, -0.2, -4.6667, 3, 0.2, -4.6667, 3, -0.2, -4.6667, 3, 0.2, 4.6667, 3, 0.2, 4.6667, 3, -0.2, -4.6667, 3, -0.2, 4.6667, -3, 0.2, 5, -3, -0.2, 5, -3, 0.2, 4.6667, -3, 0.2, 4.6667, -3, -0.2, 5, -3, -0.2, 4.6667, -3, 0.2, 4.6667, -3, -0.2, 4.6667, -3, 0.2, -4.6667, -3, 0.2, -4.6667, -3, -0.2, 4.6667, -3, -0.2, -4.6667, -3, 2, 4.6667, 3, 2, 4.6667, -3, 2, 5, -3, 2, 5, 3, 2, 4.6667, 3, 2, 5, -3, 0.2, 5, -3, 0.2, 4.6667, -3, 2, 5, -3, 2, 5, -3, 0.2, 4.6667, -3, 2, 4.6667, -3, 0.2, 4.6667, 3, 0.2, 4.6667, -3, 2, 4.6667, -3, 2, 4.6667, 3, 0.2, 4.6667, 3, 2, 4.6667, 3, 0.2, 4.6667, 3, 0.2, 5, 3, 2, 4.6667, 3, 2, 4.6667, 3, 0.2, 5, 3, 2, 5, -3, 2, -5, 3, 2, -5, -3, 2, -4.6667, -3, 2, -4.6667, 3, 2, -5, 3, 2, -4.6667, 3, 0.2, -4.6667, -3, 0.2, -4.6667, 3, 2, -4.6667, 3, 2, -4.6667, -3, 0.2, -4.6667, -3, 2, -4.6667, 3, 0.2, -5, 3, 0.2, -4.6667, 3, 2, -5, 3, 2, -5, 3, 0.2, -4.6667, 3, 2, -4.6667, -3, 0.2, -5, 3, 0.2, -5, -3, 2, -5, -3, 2, -5, 3, 0.2, -5, 3, 2, -5, -0.3, 2, 4.2, -0.3, 0, 4.2, -0.3, 2, -0.2, -0.3, 2, -0.2, -0.3, 0, 4.2, -0.3, 0, -0.2, -0.3, 2, -0.2, -0.3, 0, -0.2, 0.3, 2, -0.2, 0.3, 2, -0.2, -0.3, 0, -0.2, 0.3, 0, -0.2, 0.3, 2, -0.2, 0.3, 0, -0.2, 0.3, 2, 4.2, 0.3, 2, 4.2, 0.3, 0, -0.2, 0.3, 0, 4.2, 0.3, 2, 4.2, 0.3, 0, 4.2, -0.3, 2, 4.2, -0.3, 2, 4.2, 0.3, 0, 4.2, -0.3, 0, 4.2, 0.3, 0, -0.2, -0.3, 0, -0.2, 0.3, 0, 4.2, 0.3, 0, 4.2, -0.3, 0, -0.2, -0.3, 0, 4.2, -0.3, 2, -0.2, 0.3, 2, -0.2, -0.3, 2, 4.2, -0.3, 2, 4.2, 0.3, 2, -0.2, 0.3, 2, 4.2)
+
+[node name="Module" type="Node3D" groups=["obstacle"]]
+script = ExtResource("1_1nnqp")
+buildings = Array[PackedScene]([ExtResource("2_f4s8a"), ExtResource("3_ggua3")])
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = ExtResource("1_135by")
+surface_material_override/0 = ExtResource("2_ibr6l")
+surface_material_override/1 = ExtResource("3_61i5u")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_bt2rf")

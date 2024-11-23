@@ -1,0 +1,53 @@
+[gd_scene load_steps=13 format=3 uid="uid://ss2byc32cgub"]
+
+[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/level.gd" id="1_hveqe"]
+[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/main.gd" id="1_hvvp6"]
+[ext_resource type="PackedScene" uid="uid://dcaxwvenlvou" path="res://tutorial-endless-run/art/modules/module-1.tscn" id="2_watwo"]
+[ext_resource type="PackedScene" uid="uid://do702vixa3mmc" path="res://tutorial-endless-run/art/modules/module-2.tscn" id="3_ps64d"]
+[ext_resource type="PackedScene" uid="uid://c083wwofxbomb" path="res://tutorial-endless-run/art/modules/module-3.tscn" id="4_ag6ga"]
+[ext_resource type="PackedScene" uid="uid://hq0mmtx5fq5n" path="res://tutorial-endless-run/art/modules/module-5.tscn" id="5_af1nf"]
+[ext_resource type="PackedScene" uid="uid://c8ela1a4fd1wr" path="res://tutorial-endless-run/art/modules/module-4.tscn" id="6_reta4"]
+[ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://tutorial-endless-run/art/scene/pauseMenu.tscn" id="8_k1fec"]
+[ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://tutorial-endless-run/art/scene/player.tscn" id="9_4pcks"]
+
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_6t8t4"]
+
+[sub_resource type="Sky" id="Sky_6a11g"]
+sky_material = SubResource("PhysicalSkyMaterial_6t8t4")
+
+[sub_resource type="Environment" id="Environment_k6itf"]
+background_mode = 2
+sky = SubResource("Sky_6a11g")
+glow_enabled = true
+glow_intensity = 3.65
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.0692
+volumetric_fog_albedo = Color(0.654232, 0.654232, 0.654232, 1)
+
+[node name="main" type="Node3D"]
+script = ExtResource("1_hvvp6")
+
+[node name="Level" type="Node3D" parent="."]
+script = ExtResource("1_hveqe")
+modules = Array[PackedScene]([ExtResource("2_watwo"), ExtResource("3_ps64d"), ExtResource("4_ag6ga"), ExtResource("6_reta4"), ExtResource("5_af1nf")])
+
+[node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
+transform = Transform3D(-0.0238824, 0.29835, -0.954158, 0.117206, 0.948683, 0.293705, 0.99282, -0.104819, -0.0576254, 0, 5.48412, 0)
+light_energy = 2.634
+shadow_enabled = true
+
+[node name="Camera3D" type="Camera3D" parent="."]
+transform = Transform3D(-0.00953605, 0.352272, -0.935849, 0.000766221, 0.935894, 0.352281, 0.999954, 0.00264231, -0.00919465, -6.087, 4.82889, 0)
+fov = 62.7341
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_k6itf")
+
+[node name="pauseMenu" parent="." instance=ExtResource("8_k1fec")]
+visible = false
+
+[node name="player" parent="." instance=ExtResource("9_4pcks")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1, 0)
+jump_height = 2.5
+jump_time_to_peak = 0.4
+jump_time_to_descent = 0.4

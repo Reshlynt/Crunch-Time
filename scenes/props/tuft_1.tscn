@@ -1,0 +1,11 @@
+[gd_scene load_steps=3 format=3 uid="uid://b5dgdn43pd422"]
+
+[ext_resource type="PackedScene" uid="uid://b0iquwv0pfyrj" path="res://scenes/props/base/prop_base.tscn" id="1_hyvjl"]
+[ext_resource type="Texture2D" uid="uid://by0121ieji2hc" path="res://spritesheets/propTextures/grassTuft1.png" id="2_ucidg"]
+
+[node name="Tuft_1" instance=ExtResource("1_hyvjl")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0512784, 0)
+texture = ExtResource("2_ucidg")
+
+[node name="CollisionShape3D" parent="StaticBody3D" index="0"]
+disabled = true
