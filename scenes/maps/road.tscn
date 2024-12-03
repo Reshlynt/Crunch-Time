@@ -1,0 +1,27 @@
+[gd_scene load_steps=5 format=3 uid="uid://dtdss75q8ijqm"]
+
+[ext_resource type="PackedScene" uid="uid://cdftkk5uturgm" path="res://scenes/obstacle/carObstacle.tscn" id="1_er733"]
+[ext_resource type="PackedScene" uid="uid://dv6f4ptntl0uq" path="res://scenes/obstacle/donutObstacle.tscn" id="2_jdug1"]
+[ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://tutorial-endless-run/art/scene/player.tscn" id="3_2l6u7"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_08tj0"]
+size = Vector3(6, 0.5, 10)
+
+[node name="Ground" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("BoxMesh_08tj0")
+
+[node name="car" parent="." instance=ExtResource("1_er733")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 3)
+
+[node name="car2" parent="." instance=ExtResource("1_er733")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, -3)
+
+[node name="donut" parent="." instance=ExtResource("2_jdug1")]
+transform = Transform3D(1.5, 0, 0, 0, 1.5, 0, 0, 0, 1.5, 0, 0, 0)
+
+[node name="player" parent="." instance=ExtResource("3_2l6u7")]

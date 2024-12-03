@@ -1,5 +1,5 @@
 extends CharacterBody3D
-var positions = [-3.1, 0, 3.1] # Valid positions to not get hit by 
+var positions = [-2.5, 0, 2.5] # Valid positions to not get hit by 
 var curPos = 1 # Start at the center. Keep track.
 const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
