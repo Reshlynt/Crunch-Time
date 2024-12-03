@@ -15,13 +15,14 @@ const RIGHT: Vector2 = Vector2(1,0)
 
 # Goal: Make discrete movements. left, right, and center.
 func _physics_process(delta: float) -> void:
+	move_and_slide()
 	velocity.y -= _get_gravity() * delta
 	player_move(delta)
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 	if death_sense.is_colliding():
 		death()
-	move_and_slide()
+
 
 # operates player movement
 func player_move(delta: float):
