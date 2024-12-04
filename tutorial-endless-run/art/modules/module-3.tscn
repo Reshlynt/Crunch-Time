@@ -1,6 +1,6 @@
 [gd_scene load_steps=8 format=3 uid="uid://c083wwofxbomb"]
 
-[ext_resource type="Script" path="res://tutorial-endless-run/art/modules/module.gd" id="1_pp0ra"]
+[ext_resource type="Script" path="res://src/module/module.gd" id="1_pp0ra"]
 [ext_resource type="ArrayMesh" uid="uid://qpepujexwbww" path="res://tutorial-endless-run/art/models/module3.obj" id="1_vj4fr"]
 [ext_resource type="Material" uid="uid://wa5nc8v30bpm" path="res://tutorial-endless-run/art/material/grey-material.tres" id="2_adphm"]
 [ext_resource type="PackedScene" uid="uid://dmgp6edj65a0w" path="res://tutorial-endless-run/art/modules/small_building.tscn" id="2_tec6d"]

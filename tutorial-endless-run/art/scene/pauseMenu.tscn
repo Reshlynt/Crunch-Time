@@ -1,6 +1,7 @@
 [gd_scene load_steps=2 format=3 uid="uid://cliceuxg3ykps"]
 
-[ext_resource type="Script" path="res://tutorial-endless-run/art/scene/pause_menu.gd" id="1_v65ru"]
+[ext_resource type="Script" path="res://src/game/pause_menu.gd" id="1_v65ru"]
+
 
 [node name="pauseMenu" type="Control"]
 layout_mode = 3

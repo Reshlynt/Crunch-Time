@@ -1,7 +1,7 @@
 [gd_scene load_steps=8 format=3 uid="uid://c8ela1a4fd1wr"]
 
 [ext_resource type="ArrayMesh" uid="uid://dbto8bkl5hh23" path="res://tutorial-endless-run/art/models/module4.obj" id="1_13c35"]
-[ext_resource type="Script" path="res://tutorial-endless-run/art/modules/module.gd" id="1_xa8q5"]
+[ext_resource type="Script" path="res://src/module/module.gd" id="1_xa8q5"]
 [ext_resource type="Material" uid="uid://wa5nc8v30bpm" path="res://tutorial-endless-run/art/material/grey-material.tres" id="2_54egw"]
 [ext_resource type="PackedScene" uid="uid://dmgp6edj65a0w" path="res://tutorial-endless-run/art/modules/small_building.tscn" id="2_ogcfd"]
 [ext_resource type="Material" uid="uid://chy76t11vf1rv" path="res://tutorial-endless-run/art/material/red-material.tres" id="3_clkn6"]
