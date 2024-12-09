@@ -1,5 +1,58 @@
-[gd_scene load_steps=2 format=3 uid="uid://mctdcfei53vp"]
+[gd_scene load_steps=6 format=3 uid="uid://c4pe7orfaetnm"]
 
 [ext_resource type="PackedScene" uid="uid://bqx0mwmeksvlg" path="res://blender imports/donut.glb" id="1_ptxd1"]
 
-[node name="donut" instance=ExtResource("1_ptxd1")]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v2qeu"]
+height = 0.871791
+radius = 0.983404
+
+[sub_resource type="Animation" id="Animation_qfdtn"]
+resource_name = "donut bounce"
+loop_mode = 1
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0, 0.25, 1, 0, 0.063, 0, 0.5, 1, 0, 0.125, 0, 0.75, 1, 0, 0.06, 0, 1, 1, 0, 0, 0)
+tracks/1/type = "rotation_3d"
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/path = NodePath("model")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/keys = PackedFloat32Array(0, 1, 0, 0, 0, 1, 0.25, 1, 0, 0.707107, 0, 0.707107, 0.5, 1, 0, 1, 0, -4.37114e-08, 0.75, 1, 0, -0.707107, 0, 0.707107, 1, 1, 0, 8.74228e-08, 0, 1)
+
+[sub_resource type="Animation" id="Animation_0kr23"]
+length = 0.001
+tracks/0/type = "position_3d"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath("model")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = PackedFloat32Array(0, 1, 0, 0, 0)
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_w1uau"]
+_data = {
+"RESET": SubResource("Animation_0kr23"),
+"donut bounce": SubResource("Animation_qfdtn")
+}
+
+[node name="Donut" type="Node3D"]
+
+[node name="model" parent="." instance=ExtResource("1_ptxd1")]
+transform = Transform3D(-0.578565, 0, 0.815636, 0, 1, 0, -0.815636, 0, -0.578565, 0, 0, 0)
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000806093, 0.431201, 0.00685191)
+shape = SubResource("CylinderShape3D_v2qeu")
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_w1uau")
+}
+autoplay = "donut bounce"
