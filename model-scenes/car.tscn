@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://dp0vfbb82bgw8"]
+
+[ext_resource type="PackedScene" uid="uid://c6ban74vfl0gf" path="res://blender imports/car.glb" id="1_hi3ep"]
+
+[node name="car" instance=ExtResource("1_hi3ep")]

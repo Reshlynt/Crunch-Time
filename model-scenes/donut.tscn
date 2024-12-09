@@ -1,0 +1,5 @@
+[gd_scene load_steps=2 format=3 uid="uid://mctdcfei53vp"]
+
+[ext_resource type="PackedScene" uid="uid://bqx0mwmeksvlg" path="res://blender imports/donut.glb" id="1_ptxd1"]
+
+[node name="donut" instance=ExtResource("1_ptxd1")]
