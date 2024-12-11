@@ -1,8 +1,8 @@
 [gd_scene load_steps=11 format=3 uid="uid://dtdss75q8ijqm"]
 
 [ext_resource type="Script" path="res://src/module/module.gd" id="1_2rwur"]
-[ext_resource type="PackedScene" uid="uid://cdftkk5uturgm" path="res://game-scene/obstacle/carObstacle.tscn" id="1_er733"]
-[ext_resource type="PackedScene" uid="uid://dv6f4ptntl0uq" path="res://game-scene/obstacle/donutObstacle.tscn" id="2_jdug1"]
+[ext_resource type="PackedScene" uid="uid://cydrboxwcuhsn" path="res://model-scenes/car.tscn" id="2_fjmds"]
+[ext_resource type="PackedScene" uid="uid://c4pe7orfaetnm" path="res://model-scenes/donut.tscn" id="3_34e5y"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0r5x"]
 albedo_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
@@ -29,7 +29,7 @@ data = PackedVector3Array(-2.5, 0.25, 1, 2.5, 0.25, 1, -2.5, -0.25, 1, 2.5, 0.25
 
 [node name="Ground" type="Node3D"]
 script = ExtResource("1_2rwur")
-obstacles = Array[PackedScene]([ExtResource("1_er733"), ExtResource("2_jdug1")])
+obstacles = Array[PackedScene]([ExtResource("2_fjmds"), ExtResource("3_34e5y")])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

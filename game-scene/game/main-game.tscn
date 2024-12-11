@@ -1,4 +1,4 @@
-[gd_scene load_steps=6 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=9 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/main.gd" id="1_plejb"]
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
@@ -6,6 +6,16 @@
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://game-scene/player/player.tscn" id="5_fg01p"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/game/pauseMenu.tscn" id="8_epc66"]
 
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
+
+[sub_resource type="Sky" id="Sky_f5dp2"]
+sky_material = SubResource("PhysicalSkyMaterial_vlrfn")
+
+[sub_resource type="Environment" id="Environment_300yk"]
+background_mode = 2
+sky = SubResource("Sky_f5dp2")
+volumetric_fog_enabled = true
+volumetric_fog_density = 0.03
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_plejb")
@@ -29,4 +39,7 @@ jump_time_to_peak = 0.5
 jump_time_to_descent = 0.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-4.37114e-08, 0.526956, -0.849893, 0, 0.849893, 0.526956, 1, 2.3034e-08, -3.715e-08, -5.27885, 0, 0)
+transform = Transform3D(-4.10507e-08, 0.78687, -0.617118, 1.50175e-08, 0.617118, 0.78687, 1, 2.3034e-08, -3.715e-08, -5.27885, 3, 0)
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_300yk")
