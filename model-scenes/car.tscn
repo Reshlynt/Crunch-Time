@@ -1,20 +1,22 @@
-[gd_scene load_steps=3 format=3 uid="uid://cydrboxwcuhsn"]
+[gd_scene load_steps=4 format=3 uid="uid://cydrboxwcuhsn"]
 
+[ext_resource type="Script" path="res://model-scenes/car.gd" id="1_b2anw"]
 [ext_resource type="PackedScene" uid="uid://c6ban74vfl0gf" path="res://blender imports/car.glb" id="1_hi3ep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ke2l5"]
 size = Vector3(3.21313, 2.01416, 1.99768)
 
 [node name="Car" type="Node3D"]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0, 0)
+script = ExtResource("1_b2anw")
 
 [node name="model" parent="." instance=ExtResource("1_hi3ep")]
 
 [node name="Skeleton3D" parent="model/Armature" index="0"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 9.05991e-05, -0.0047648, 0.000771046)
-bones/0/scale = Vector3(1, 0.903723, 1)
-bones/1/rotation = Quaternion(-0.0233412, 0.706721, -0.0233412, -0.706721)
+bones/0/scale = Vector3(1, 1.02566, 1)
 bones/2/position = Vector3(-1, 0.325, 2.32824e-10)
-bones/2/rotation = Quaternion(0.0260981, -0.706807, 0.0205838, 0.706625)
+bones/2/rotation = Quaternion(-0.498046, -0.498046, -0.501947, 0.501947)
 bones/2/scale = Vector3(1, 1, 1)
 bones/3/scale = Vector3(1, 1, 1)
 

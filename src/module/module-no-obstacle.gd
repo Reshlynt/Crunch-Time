@@ -1,17 +1,18 @@
 extends Node3D
 
 @onready var level = $"../" #Get the parent level node
-@onready var player = $"/root/main/player/" #Acquire the player node during runtime
 @export var buildings: Array[PackedScene] = [] #Stores all modules for use in generation.
-@export var obstacles: Array[PackedScene] = [] #Stores all obstacles to spawn
 var speed = 10
 var rng = RandomNumberGenerator.new()
 const CAMERA_POS = -20
+var obstacleSpawn = false
+var positions = [-2.5, 0, 2.5] # Valid positions (from player)
 
 func _ready() -> void:
 	#spawnBuilding()
-	spawnObstacle()
+	pass
 	
+
 # Modules spawn and approach the player
 # After being behind the player, they can no longer be seen and are destroyed.
 func _process(delta: float) -> void:
@@ -33,13 +34,3 @@ func spawnBuilding():
 	var sec_instance = buildings[sec_num].instantiate()
 	sec_instance.position.z = -7.3
 	add_child(sec_instance)
-
-# Spawns an obstacle on the road for the player to avoid.
-func spawnObstacle():
-	rng.randomize()
-	var num = rng.randi_range(0, obstacles.size() - 1)
-	var instance = obstacles[num].instantiate()
-	rng.randomize()
-	num = rng.randi_range(0, player.positions.size() - 1)
-	instance.position.z = player.positions[num]
-	add_child(instance)
