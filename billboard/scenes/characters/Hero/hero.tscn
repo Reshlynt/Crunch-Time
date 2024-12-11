@@ -1,0 +1,76 @@
+[gd_scene load_steps=8 format=3 uid="uid://bnjxnutgn6xij"]
+
+[ext_resource type="Script" path="res://field/scenes/characters/Hero/hero.gd" id="1_wdskf"]
+[ext_resource type="Texture2D" uid="uid://baqp0a3axe615" path="res://field/spritesheets/characters/Hero/HeroMain.png" id="2_a4g5m"]
+[ext_resource type="Script" path="res://field/scenes/characters/Hero/spring_arm_3d.gd" id="3_ey6rw"]
+
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_0iwpi"]
+radius = 0.147897
+height = 0.836268
+
+[sub_resource type="Animation" id="Animation_kl7wc"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_sr3xs"]
+length = 0.8
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6, 0.7),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6, 7]
+}
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_bf4fo"]
+_data = {
+"RESET": SubResource("Animation_kl7wc"),
+"run": SubResource("Animation_sr3xs")
+}
+
+[node name="Hero" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.06, 0)
+script = ExtResource("1_wdskf")
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.360364, 0, 0, 0, 0.360364, 0, 0, 0, 0.360364, 0, 0.0901313, 0)
+shape = SubResource("CapsuleShape3D_0iwpi")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.99919, 0, 0, 0, 0.99919, 0, 0, 0, 0.99919, 0.00816679, 0.097582, 0)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("2_a4g5m")
+hframes = 12
+vframes = 8
+frame = 1
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_bf4fo")
+}
+
+[node name="CameraArm" type="SpringArm3D" parent="."]
+script = ExtResource("3_ey6rw")
+
+[node name="Camera3D" type="Camera3D" parent="CameraArm"]

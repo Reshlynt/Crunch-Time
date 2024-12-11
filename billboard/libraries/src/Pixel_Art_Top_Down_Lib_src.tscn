@@ -1,0 +1,23 @@
+[gd_scene load_steps=7 format=3 uid="uid://b0hofaq11knqq"]
+
+[ext_resource type="PackedScene" uid="uid://0crhrvp1g57j" path="res://field/scenes/blocks/base/base_block.tscn" id="1_wwyca"]
+[ext_resource type="PackedScene" uid="uid://3utusa00sef3" path="res://field/scenes/blocks/base/base_slope.tscn" id="2_bedvu"]
+[ext_resource type="PackedScene" uid="uid://cj8bcn10c3oyy" path="res://field/scenes/blocks/grass1.tscn" id="3_ymwrh"]
+[ext_resource type="PackedScene" uid="uid://dbpxjtb1540ou" path="res://field/scenes/blocks/grass2.tscn" id="4_71uxe"]
+[ext_resource type="PackedScene" uid="uid://c535plnd6jv1k" path="res://field/scenes/blocks/stone1.tscn" id="5_uba1u"]
+[ext_resource type="PackedScene" uid="uid://cc0bioqcmg70u" path="res://field/scenes/blocks/stone2.tscn" id="6_rdq0l"]
+
+
+[node name="PixelArtTopDownLibSrc" type="Node3D"]
+
+[node name="base_block" parent="." instance=ExtResource("1_wwyca")]
+
+[node name="BaseSlope" parent="." instance=ExtResource("2_bedvu")]
+
+[node name="grass1" parent="." instance=ExtResource("3_ymwrh")]
+
+[node name="grass2" parent="." instance=ExtResource("4_71uxe")]
+
+[node name="stone1" parent="." instance=ExtResource("5_uba1u")]
+
+[node name="stone2" parent="." instance=ExtResource("6_rdq0l")]
