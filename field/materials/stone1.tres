@@ -1,0 +1,8 @@
+[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://eun2j2w78mni"]
+
+[ext_resource type="Texture2D" uid="uid://ic50p2wq8abv" path="res://field/spritesheets/terrainTextures/Stone1.png" id="1_uoga0"]
+
+[resource]
+albedo_texture = ExtResource("1_uoga0")
+uv1_scale = Vector3(3, 2, 1)
+texture_filter = 0

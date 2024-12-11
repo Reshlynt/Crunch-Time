@@ -1,0 +1,58 @@
+[gd_scene load_steps=11 format=3 uid="uid://dtdss75q8ijqm"]
+
+[ext_resource type="Script" path="res://src/module/module.gd" id="1_2rwur"]
+[ext_resource type="PackedScene" uid="uid://cdftkk5uturgm" path="res://scenes/obstacle/carObstacle.tscn" id="1_er733"]
+[ext_resource type="PackedScene" uid="uid://dv6f4ptntl0uq" path="res://scenes/obstacle/donutObstacle.tscn" id="2_jdug1"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0r5x"]
+albedo_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_08tj0"]
+material = SubResource("StandardMaterial3D_e0r5x")
+size = Vector3(5, 0.5, 9)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_1cx6h"]
+data = PackedVector3Array(-2.5, 0.25, 4.5, 2.5, 0.25, 4.5, -2.5, -0.25, 4.5, 2.5, 0.25, 4.5, 2.5, -0.25, 4.5, -2.5, -0.25, 4.5, 2.5, 0.25, -4.5, -2.5, 0.25, -4.5, 2.5, -0.25, -4.5, -2.5, 0.25, -4.5, -2.5, -0.25, -4.5, 2.5, -0.25, -4.5, 2.5, 0.25, 4.5, 2.5, 0.25, -4.5, 2.5, -0.25, 4.5, 2.5, 0.25, -4.5, 2.5, -0.25, -4.5, 2.5, -0.25, 4.5, -2.5, 0.25, -4.5, -2.5, 0.25, 4.5, -2.5, -0.25, -4.5, -2.5, 0.25, 4.5, -2.5, -0.25, 4.5, -2.5, -0.25, -4.5, 2.5, 0.25, 4.5, -2.5, 0.25, 4.5, 2.5, 0.25, -4.5, -2.5, 0.25, 4.5, -2.5, 0.25, -4.5, 2.5, 0.25, -4.5, -2.5, -0.25, 4.5, 2.5, -0.25, 4.5, -2.5, -0.25, -4.5, 2.5, -0.25, 4.5, 2.5, -0.25, -4.5, -2.5, -0.25, -4.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_y5h8h"]
+albedo_color = Color(0.65834, 0.65834, 0.65834, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_ursog"]
+material = SubResource("StandardMaterial3D_y5h8h")
+size = Vector3(5, 0.5, 2)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tstme"]
+data = PackedVector3Array(-2.5, 0.25, 1, 2.5, 0.25, 1, -2.5, -0.25, 1, 2.5, 0.25, 1, 2.5, -0.25, 1, -2.5, -0.25, 1, 2.5, 0.25, -1, -2.5, 0.25, -1, 2.5, -0.25, -1, -2.5, 0.25, -1, -2.5, -0.25, -1, 2.5, -0.25, -1, 2.5, 0.25, 1, 2.5, 0.25, -1, 2.5, -0.25, 1, 2.5, 0.25, -1, 2.5, -0.25, -1, 2.5, -0.25, 1, -2.5, 0.25, -1, -2.5, 0.25, 1, -2.5, -0.25, -1, -2.5, 0.25, 1, -2.5, -0.25, 1, -2.5, -0.25, -1, 2.5, 0.25, 1, -2.5, 0.25, 1, 2.5, 0.25, -1, -2.5, 0.25, 1, -2.5, 0.25, -1, 2.5, 0.25, -1, -2.5, -0.25, 1, 2.5, -0.25, 1, -2.5, -0.25, -1, 2.5, -0.25, 1, 2.5, -0.25, -1, -2.5, -0.25, -1)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_4g3td"]
+data = PackedVector3Array(-2.5, 0.25, 1, 2.5, 0.25, 1, -2.5, -0.25, 1, 2.5, 0.25, 1, 2.5, -0.25, 1, -2.5, -0.25, 1, 2.5, 0.25, -1, -2.5, 0.25, -1, 2.5, -0.25, -1, -2.5, 0.25, -1, -2.5, -0.25, -1, 2.5, -0.25, -1, 2.5, 0.25, 1, 2.5, 0.25, -1, 2.5, -0.25, 1, 2.5, 0.25, -1, 2.5, -0.25, -1, 2.5, -0.25, 1, -2.5, 0.25, -1, -2.5, 0.25, 1, -2.5, -0.25, -1, -2.5, 0.25, 1, -2.5, -0.25, 1, -2.5, -0.25, -1, 2.5, 0.25, 1, -2.5, 0.25, 1, 2.5, 0.25, -1, -2.5, 0.25, 1, -2.5, 0.25, -1, 2.5, 0.25, -1, -2.5, -0.25, 1, 2.5, -0.25, 1, -2.5, -0.25, -1, 2.5, -0.25, 1, 2.5, -0.25, -1, -2.5, -0.25, -1)
+
+[node name="Ground" type="Node3D"]
+script = ExtResource("1_2rwur")
+obstacles = Array[PackedScene]([ExtResource("1_er733"), ExtResource("2_jdug1")])
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="Road" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+mesh = SubResource("BoxMesh_08tj0")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 0)
+shape = SubResource("ConcavePolygonShape3D_1cx6h")
+
+[node name="RightSidewalk" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 5.5)
+mesh = SubResource("BoxMesh_ursog")
+
+[node name="RightCollision" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, 5.5)
+shape = SubResource("ConcavePolygonShape3D_tstme")
+
+[node name="LeftSidewalk" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -5.5)
+mesh = SubResource("BoxMesh_ursog")
+
+[node name="LeftCollision" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, -0.25, -5.5)
+shape = SubResource("ConcavePolygonShape3D_4g3td")
