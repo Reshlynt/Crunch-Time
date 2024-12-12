@@ -13,5 +13,5 @@ func _on_quit_pressed() -> void:
 
 
 func _on_back_to_main_menu_pressed() -> void:
+	get_tree().change_scene_to_file("res://field/scenes/maps/mainmenu.tscn")
 	main.pauseMenu()
-	get_tree().change_scene_to_file("res://scenes/maps/mainmenu.tscn")

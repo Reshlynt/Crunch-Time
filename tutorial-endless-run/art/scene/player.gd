@@ -4,7 +4,7 @@ var curPos = 1 # Start at the center. Keep track.
 const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
 @onready var death_sense: RayCast3D = $DeathSense
-
+@onready var main = $"../"
 @export var jump_height : float
 @export var jump_time_to_peak : float
 @export var jump_time_to_descent : float
@@ -42,7 +42,7 @@ func player_move(delta: float):
 
 # Reload scene
 func death():
-	get_tree().reload_current_scene()
+	get_tree().change_scene_to_file("res://tutorial-endless-run/art/scene/deathScene.tscn")
 
 # Return gravity
 func _get_gravity() -> float:
