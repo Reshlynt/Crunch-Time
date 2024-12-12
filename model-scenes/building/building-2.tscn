@@ -1,0 +1,175 @@
+[gd_scene load_steps=9 format=3 uid="uid://cpid7x5487a76"]
+
+[ext_resource type="PackedScene" uid="uid://dlqq226158i7s" path="res://model-scenes/building/window.tscn" id="1_lukiy"]
+[ext_resource type="PackedScene" uid="uid://btv7y8gefkpdt" path="res://model-scenes/building/Door.tscn" id="2_ddlif"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ls0y"]
+albedo_color = Color(0.978161, 0.772509, 0.653373, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcpnf"]
+material = SubResource("StandardMaterial3D_2ls0y")
+size = Vector3(5, 6, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1vrx"]
+albedo_color = Color(0.25098, 0.239216, 0.223529, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c2rww"]
+material = SubResource("StandardMaterial3D_t1vrx")
+size = Vector3(5, 0.3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e4iu"]
+albedo_color = Color(0.25098, 0.239216, 0.223529, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7i3yh"]
+material = SubResource("StandardMaterial3D_7e4iu")
+size = Vector3(0.1, 0.3, 2.8)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3, 0)
+mesh = SubResource("BoxMesh_vcpnf")
+
+[node name="Window21" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8, 5.493, 1.501)
+
+[node name="Window22" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.9, 5.493, 1.501)
+
+[node name="Window23" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.19564e-08, 5.493, 1.501)
+
+[node name="Window24" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.9, 5.493, 1.501)
+
+[node name="Window25" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8, 5.493, 1.501)
+
+[node name="Window26" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8, 4.693, 1.501)
+
+[node name="Window27" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.9, 4.693, 1.501)
+
+[node name="Window28" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.19564e-08, 4.693, 1.501)
+
+[node name="Window29" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.9, 4.693, 1.501)
+
+[node name="Window30" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8, 4.693, 1.501)
+
+[node name="Window31" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8, 3.893, 1.501)
+
+[node name="Window32" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.9, 3.893, 1.501)
+
+[node name="Window33" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.19564e-08, 3.893, 1.501)
+
+[node name="Window34" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.9, 3.893, 1.501)
+
+[node name="Window35" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8, 3.893, 1.501)
+
+[node name="Window36" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -1.8, 3.093, 1.501)
+
+[node name="Window37" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -0.9, 3.093, 1.501)
+
+[node name="Window38" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, -8.19564e-08, 3.093, 1.501)
+
+[node name="Window39" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 0.9, 3.093, 1.501)
+
+[node name="Window40" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(0.5, 0, 0, 0, 0.5, 0, 0, 0, 0.5, 1.8, 3.093, 1.501)
+
+[node name="Door" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.501)
+
+[node name="Window51" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -1.8, 5.493, -1.501)
+
+[node name="Window52" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.9, 5.493, -1.501)
+
+[node name="Window53" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -8.19564e-08, 5.493, -1.501)
+
+[node name="Window54" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.9, 5.493, -1.501)
+
+[node name="Window55" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.8, 5.493, -1.501)
+
+[node name="Window56" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -1.8, 4.693, -1.501)
+
+[node name="Window57" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.9, 4.693, -1.501)
+
+[node name="Window58" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -8.19564e-08, 4.693, -1.501)
+
+[node name="Window59" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.9, 4.693, -1.501)
+
+[node name="Window60" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.8, 4.693, -1.501)
+
+[node name="Window61" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -1.8, 3.893, -1.501)
+
+[node name="Window62" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.9, 3.893, -1.501)
+
+[node name="Window63" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -8.19564e-08, 3.893, -1.501)
+
+[node name="Window64" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.9, 3.893, -1.501)
+
+[node name="Window65" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.8, 3.893, -1.501)
+
+[node name="Window66" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -1.8, 3.093, -1.501)
+
+[node name="Window67" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -0.9, 3.093, -1.501)
+
+[node name="Window68" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, -8.19564e-08, 3.093, -1.501)
+
+[node name="Window69" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 0.9, 3.093, -1.501)
+
+[node name="Window70" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-0.5, 0, -4.37114e-08, 0, 0.5, 0, 4.37114e-08, 0, -0.5, 1.8, 3.093, -1.501)
+
+[node name="Door2" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, -1.501)
+
+[node name="RoofRim" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.15, -1.45)
+mesh = SubResource("BoxMesh_c2rww")
+
+[node name="RoofRim3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45, 6.15, 0)
+mesh = SubResource("BoxMesh_7i3yh")
+
+[node name="RoofRim4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 6.15, 0)
+mesh = SubResource("BoxMesh_7i3yh")
+
+[node name="RoofRim2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 6.15, 1.45)
+mesh = SubResource("BoxMesh_c2rww")

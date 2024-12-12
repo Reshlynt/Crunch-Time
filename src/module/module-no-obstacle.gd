@@ -9,8 +9,7 @@ var obstacleSpawn = false
 var positions = [-2.5, 0, 2.5] # Valid positions (from player)
 
 func _ready() -> void:
-	#spawnBuilding()
-	pass
+	spawnBuilding()
 	
 
 # Modules spawn and approach the player

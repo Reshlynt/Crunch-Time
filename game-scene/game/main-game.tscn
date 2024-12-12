@@ -2,12 +2,14 @@
 
 [ext_resource type="Script" path="res://src/game/main.gd" id="1_plejb"]
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
-[ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://game-scene/obstacle/road.tscn" id="3_y4su2"]
+[ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road.tscn" id="3_y4su2"]
 [ext_resource type="PackedScene" uid="uid://b5s7y47dt0i02" path="res://game-scene/obstacle/road-no_obstacle.tscn" id="4_4cdr3"]
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://game-scene/player/player.tscn" id="5_fg01p"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/game/pauseMenu.tscn" id="8_epc66"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
+ground_color = Color(0.639537, 0.823187, 0.992865, 1)
+energy_multiplier = 20.48
 
 [sub_resource type="Sky" id="Sky_f5dp2"]
 sky_material = SubResource("PhysicalSkyMaterial_vlrfn")
@@ -15,8 +17,10 @@ sky_material = SubResource("PhysicalSkyMaterial_vlrfn")
 [sub_resource type="Environment" id="Environment_300yk"]
 background_mode = 2
 sky = SubResource("Sky_f5dp2")
+ambient_light_source = 3
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.03
+volumetric_fog_density = 0.06
+volumetric_fog_albedo = Color(0.807425, 0.904761, 0.995815, 1)
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_plejb")
@@ -40,7 +44,7 @@ jump_time_to_peak = 0.5
 jump_time_to_descent = 0.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-4.10507e-08, 0.78687, -0.617118, 1.50175e-08, 0.617118, 0.78687, 1, 2.3034e-08, -3.715e-08, -5.27885, 3, 0)
+transform = Transform3D(-2.72778e-08, 0.992941, -0.118612, 3.41556e-08, 0.118612, 0.992941, 1, 2.3034e-08, -3.715e-08, -5.27885, 3, 0)
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_300yk")

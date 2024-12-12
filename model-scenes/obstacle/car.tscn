@@ -1,6 +1,6 @@
 [gd_scene load_steps=4 format=3 uid="uid://cydrboxwcuhsn"]
 
-[ext_resource type="Script" path="res://model-scenes/car.gd" id="1_b2anw"]
+[ext_resource type="Script" path="res://src/module/car.gd" id="1_b2anw"]
 [ext_resource type="PackedScene" uid="uid://c6ban74vfl0gf" path="res://blender imports/car.glb" id="1_hi3ep"]
 
 [sub_resource type="BoxShape3D" id="BoxShape3D_ke2l5"]

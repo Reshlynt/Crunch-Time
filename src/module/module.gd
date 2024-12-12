@@ -9,7 +9,7 @@ var rng = RandomNumberGenerator.new()
 const CAMERA_POS = -20
 
 func _ready() -> void:
-	#spawnBuilding()
+	spawnBuilding()
 	spawnObstacle()
 	
 # Modules spawn and approach the player
@@ -25,13 +25,13 @@ func spawnBuilding():
 	rng.randomize()
 	var num = rng.randi_range(0, buildings.size() - 1)
 	var instance = buildings[num].instantiate()
-	instance.position.z = 7.3
+	instance.position.z = 8
 	add_child(instance)
 	
 	rng.randomize()
 	var sec_num = rng.randi_range(0, buildings.size() - 1)
 	var sec_instance = buildings[sec_num].instantiate()
-	sec_instance.position.z = -7.3
+	sec_instance.position.z = -8
 	add_child(sec_instance)
 
 # Spawns an obstacle on the road for the player to avoid.

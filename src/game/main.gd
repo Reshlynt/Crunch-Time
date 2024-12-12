@@ -6,9 +6,7 @@ var pause = false
 func _process(delta: float) -> void:
 	if Input.is_action_just_pressed("Pause"):
 		pauseMenu()
-		
-		
-		
+
 func pauseMenu():
 	if pause:
 		pause_menu.hide()
