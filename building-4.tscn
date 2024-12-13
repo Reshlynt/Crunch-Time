@@ -1,7 +1,7 @@
-[gd_scene load_steps=10 format=3 uid="uid://cpid7x5487a76"]
+[gd_scene load_steps=10 format=3 uid="uid://c1pt3ru52da4c"]
 
-[ext_resource type="PackedScene" uid="uid://dlqq226158i7s" path="res://model-scenes/building/window.tscn" id="1_lukiy"]
-[ext_resource type="PackedScene" uid="uid://btv7y8gefkpdt" path="res://model-scenes/building/Door.tscn" id="2_ddlif"]
+[ext_resource type="PackedScene" uid="uid://dlqq226158i7s" path="res://model-scenes/building/window.tscn" id="1_206a3"]
+[ext_resource type="PackedScene" uid="uid://btv7y8gefkpdt" path="res://model-scenes/building/Door.tscn" id="2_hbxxv"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ls0y"]
 albedo_color = Color(0.998399, 0.983753, 0.975585, 1)
@@ -39,22 +39,22 @@ mesh = SubResource("BoxMesh_vcpnf")
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
 shape = SubResource("ConcavePolygonShape3D_tmi1u")
 
-[node name="Window37" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+[node name="Window37" parent="StaticBody3D" instance=ExtResource("1_206a3")]
 transform = Transform3D(1.15, 0, 0, 0, 0.9, 0, 0, 0, 0.5, -1.5, 0.993, 1.501)
 
-[node name="Window39" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+[node name="Window39" parent="StaticBody3D" instance=ExtResource("1_206a3")]
 transform = Transform3D(1.08675, 0, 0, 0, 0.925, 0, 0, 0, 0.5, 1.5, 0.993, 1.501)
 
-[node name="Door" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+[node name="Door" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.501)
 
-[node name="Window67" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+[node name="Window67" parent="StaticBody3D" instance=ExtResource("1_206a3")]
 transform = Transform3D(-1.15, 0, -4.37114e-08, 0, 0.9, 0, 1.00536e-07, 0, -0.5, -1.5, 0.993, -1.501)
 
-[node name="Window69" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+[node name="Window69" parent="StaticBody3D" instance=ExtResource("1_206a3")]
 transform = Transform3D(-1.08675, 0, -4.37114e-08, 0, 0.925, 0, 9.50067e-08, 0, -0.5, 1.5, 0.993, -1.501)
 
-[node name="Door2" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+[node name="Door2" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
 transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, -1.501)
 
 [node name="RoofRim" type="MeshInstance3D" parent="StaticBody3D"]
