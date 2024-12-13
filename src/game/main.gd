@@ -27,3 +27,7 @@ func deathScreen():
 		death_menu.show()
 		Engine.time_scale = 0
 	death = !death
+
+
+func _on_timer_timeout() -> void:
+	pass # Replace with function body.

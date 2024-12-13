@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=12 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/main.gd" id="1_plejb"]
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
 [ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road/road.tscn" id="3_y4su2"]
 [ext_resource type="PackedScene" uid="uid://b5s7y47dt0i02" path="res://model-scenes/road/road-no_obstacle.tscn" id="4_4cdr3"]
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://game-scene/player/player.tscn" id="5_fg01p"]
+[ext_resource type="Script" path="res://game-scene/game/clock.gd" id="7_r6rwg"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/game/pauseMenu.tscn" id="8_epc66"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
@@ -19,6 +20,18 @@ background_mode = 2
 sky = SubResource("Sky_f5dp2")
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.06
+
+[sub_resource type="FontFile" id="FontFile_x0qlt"]
+cache/0/16/0/ascent = 0.0
+cache/0/16/0/descent = 0.0
+cache/0/16/0/underline_position = 0.0
+cache/0/16/0/underline_thickness = 0.0
+cache/0/16/0/scale = 1.0
+cache/0/32/0/ascent = 0.0
+cache/0/32/0/descent = 0.0
+cache/0/32/0/underline_position = 0.0
+cache/0/32/0/underline_thickness = 0.0
+cache/0/32/0/scale = 1.0
 
 [node name="main" type="Node3D"]
 script = ExtResource("1_plejb")
@@ -46,3 +59,24 @@ transform = Transform3D(-2.72778e-08, 0.992941, -0.118612, 3.41556e-08, 0.118612
 
 [node name="WorldEnvironment" type="WorldEnvironment" parent="."]
 environment = SubResource("Environment_300yk")
+
+[node name="Control" type="Control" parent="."]
+layout_mode = 3
+anchors_preset = 0
+offset_right = 40.0
+offset_bottom = 40.0
+script = ExtResource("7_r6rwg")
+
+[node name="Timer" type="Timer" parent="Control"]
+autostart = true
+
+[node name="Label" type="Label" parent="Control"]
+layout_mode = 1
+offset_left = 45.0
+offset_top = -3.0
+offset_right = 130.0
+offset_bottom = 41.0
+theme_override_fonts/font = SubResource("FontFile_x0qlt")
+theme_override_font_sizes/font_size = 32
+
+[connection signal="timeout" from="Control/Timer" to="Control" method="_on_timer_timeout"]
