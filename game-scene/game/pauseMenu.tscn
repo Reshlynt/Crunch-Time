@@ -2,7 +2,6 @@
 
 [ext_resource type="Script" path="res://src/game/pause_menu.gd" id="1_v65ru"]
 
-
 [node name="pauseMenu" type="Control"]
 layout_mode = 3
 anchors_preset = 15

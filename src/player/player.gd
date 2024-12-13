@@ -23,6 +23,7 @@ func _physics_process(delta: float) -> void:
 	player_move(delta)
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
+		
 	if death_sensing():
 		death()
 
