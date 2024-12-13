@@ -40,11 +40,13 @@ _data = {
 "donut bounce": SubResource("Animation_qfdtn")
 }
 
-[node name="Donut" type="Node3D"]
+[node name="Donut" type="Node3D" groups=["obstacle"]]
 
 [node name="model" parent="." instance=ExtResource("1_ptxd1")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
+[node name="StaticBody3D" type="StaticBody3D" parent="." groups=["obstacle"]]
+collision_layer = 3
+collision_mask = 0
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000806093, 0.431201, 0.00685191)
