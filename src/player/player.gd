@@ -16,6 +16,8 @@ const RIGHT: Vector2 = Vector2(1,0)
 @onready var jump_gravity : float = ((2.0 * jump_height) / (jump_time_to_peak * jump_time_to_peak))
 @onready var fall_gravity : float = ((2.0 * jump_height) / (jump_time_to_descent * jump_time_to_descent))
 
+signal you_died
+
 # Goal: Make discrete movements. left, right, and center.
 func _physics_process(delta: float) -> void:
 	move_and_slide()
@@ -49,11 +51,10 @@ func player_move(delta: float):
 	# Set the z position via linear interpolation
 	position.z = lerpf(position.z, positions[curPos], delta*20)
 
-# Reload scene
+# Show death screen
 func death():
-	get_tree().change_scene_to_file("res://game-scene/game/deathScene.tscn")
-	
-	
+	you_died.emit()
+	queue_free()
 
 # Return gravity
 func _get_gravity() -> float:
