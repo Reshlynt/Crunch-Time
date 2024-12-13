@@ -1,12 +1,6 @@
 extends Control
 
 
-
-func _on_play_poc_pressed() -> void:
-	get_tree().change_scene_to_file("res://tutorial-endless-run/art/scene/main.tscn")
-	
-
-
 func _on_play_demo_pressed() -> void:
 	get_tree().change_scene_to_file("res://field/scenes/maps/field.tscn")
 
@@ -21,3 +15,7 @@ func _on_about_game_pressed() -> void:
 
 func _on_how_to_play_pressed() -> void:
 	get_tree().change_scene_to_file("res://tutorial-endless-run/art/scene/how_to_play.tscn")
+
+# Loads the game
+func _on_play_game_pressed() -> void:
+	get_tree().change_scene_to_file("res://game-scene/game/main-game.tscn")

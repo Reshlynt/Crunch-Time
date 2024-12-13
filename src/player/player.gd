@@ -48,7 +48,7 @@ func player_move(delta: float):
 
 # Reload scene
 func death():
-	get_tree().change_scene_to_file("res://tutorial-endless-run/art/scene/deathScene.tscn")
+	get_tree().change_scene_to_file("res://game-scene/game/deathScene.tscn")
 
 # Return gravity
 func _get_gravity() -> float:
