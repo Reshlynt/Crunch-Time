@@ -1,4 +1,4 @@
-[gd_scene load_steps=11 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=13 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
 [ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road/road.tscn" id="3_y4su2"]
@@ -6,6 +6,8 @@
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://model-scenes/player/player.tscn" id="5_fg01p"]
 [ext_resource type="Script" path="res://game-scene/pause_manager.gd" id="5_hk7c5"]
 [ext_resource type="PackedScene" uid="uid://dcwc2wadg1kit" path="res://game-scene/deathScene.tscn" id="7_fi6s7"]
+[ext_resource type="AudioStream" uid="uid://3to8bp1h34tc" path="res://sound-effects/pausesound.mp3" id="8_7rgy7"]
+[ext_resource type="AudioStream" uid="uid://x0nww8r35l2p" path="res://sound-effects/resume sound.mp3" id="8_383qn"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/pauseMenu.tscn" id="8_epc66"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
@@ -66,7 +68,14 @@ unique_name_in_owner = true
 visible = false
 layout_mode = 1
 
+[node name="pausesound" type="AudioStreamPlayer3D" parent="PauseManager/CanvasLayer/GreyOverlay/pauseMenu"]
+stream = ExtResource("8_7rgy7")
+
 [node name="deathScene" parent="PauseManager/CanvasLayer/GreyOverlay" instance=ExtResource("7_fi6s7")]
 unique_name_in_owner = true
 visible = false
 layout_mode = 1
+
+[node name="resumebuttonsound" type="AudioStreamPlayer3D" parent="PauseManager"]
+unique_name_in_owner = true
+stream = ExtResource("8_383qn")

@@ -6,10 +6,11 @@ func _process(delta: float) -> void:
 
 func revealPause():
 	if Input.is_action_just_pressed("Pause"):
+		$resumebuttonsound.play()
 		TREE_NODE.paused = true
 		%GreyOverlay.visible = true
 		%pauseMenu.visible = true
-
+	
 func revealDeath():
 	TREE_NODE.paused = true
 	%GreyOverlay.visible = true
