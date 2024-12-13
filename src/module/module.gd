@@ -1,7 +1,7 @@
 extends Node3D
 
 @onready var level = $"../" #Get the parent level node
-@onready var player = $"/root/main/player/" #Acquire the player node during runtime
+var positions = [-2.5, 0, 2.5] # Valid positions
 @export var buildings: Array[PackedScene] = [] #Stores all modules for use in generation.
 @export var obstacles: Array[PackedScene] = [] #Stores all obstacles to spawn
 var speed = 10
@@ -40,6 +40,6 @@ func spawnObstacle():
 	var num = rng.randi_range(0, obstacles.size() - 1)
 	var instance = obstacles[num].instantiate()
 	rng.randomize()
-	num = rng.randi_range(0, player.positions.size() - 1)
-	instance.position.z = player.positions[num]
+	num = rng.randi_range(0, positions.size() - 1)
+	instance.position.z = positions[num]
 	add_child(instance)
