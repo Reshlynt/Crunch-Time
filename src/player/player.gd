@@ -56,4 +56,4 @@ func jump():
 
 func _on_death_sense_body_entered(body: Node3D) -> void:
 	if body.is_in_group("obstacle"):
-		get_tree().paused = true
+		you_died.emit()
