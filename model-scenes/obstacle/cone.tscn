@@ -1,6 +1,6 @@
-[gd_scene load_steps=3 format=3 uid="uid://c01srt2g3u4fy"]
+[gd_scene load_steps=3 format=3 uid="uid://dmlp5kwlrv45y"]
 
-[ext_resource type="PackedScene" path="res://blender imports/cone.glb" id="2_x3oy4"]
+[ext_resource type="PackedScene" uid="uid://ct2h2u7ng3a6" path="res://blender imports/cone.glb" id="2_x3oy4"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_lv105"]
 
