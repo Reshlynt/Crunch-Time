@@ -27,11 +27,21 @@ text = "Play POC"
 layout_mode = 2
 text = "Play Field"
 
+[node name="aboutGame" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "About The Game"
+
+[node name="howToPlay" type="Button" parent="MarginContainer/VBoxContainer"]
+layout_mode = 2
+text = "How To Play"
+
 [node name="Quit" type="Button" parent="MarginContainer/VBoxContainer"]
 layout_mode = 2
 text = "Quit"
 
-[connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_play_poc_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_button_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play Demo" to="." method="_on_play_demo_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/aboutGame" to="." method="_on_about_game_pressed"]
+[connection signal="pressed" from="MarginContainer/VBoxContainer/howToPlay" to="." method="_on_how_to_play_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Quit" to="." method="_on_quit_pressed"]
