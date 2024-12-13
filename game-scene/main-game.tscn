@@ -1,10 +1,11 @@
-[gd_scene load_steps=10 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=11 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
 [ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road/road.tscn" id="3_y4su2"]
 [ext_resource type="PackedScene" uid="uid://b5s7y47dt0i02" path="res://model-scenes/road/road-no_obstacle.tscn" id="4_4cdr3"]
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://model-scenes/player/player.tscn" id="5_fg01p"]
 [ext_resource type="Script" path="res://game-scene/pause_manager.gd" id="5_hk7c5"]
+[ext_resource type="PackedScene" uid="uid://dcwc2wadg1kit" path="res://game-scene/deathScene.tscn" id="7_fi6s7"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/pauseMenu.tscn" id="8_epc66"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
@@ -20,7 +21,7 @@ sky = SubResource("Sky_f5dp2")
 volumetric_fog_enabled = true
 volumetric_fog_density = 0.06
 
-[node name="main" type="Node3D"]
+[node name="main2" type="Node3D"]
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("2_k1c4c")
@@ -49,6 +50,23 @@ script = ExtResource("5_hk7c5")
 [node name="CanvasLayer" type="CanvasLayer" parent="PauseManager"]
 process_mode = 3
 
-[node name="pauseMenu" parent="PauseManager/CanvasLayer" instance=ExtResource("8_epc66")]
+[node name="GreyOverlay" type="ColorRect" parent="PauseManager/CanvasLayer"]
+unique_name_in_owner = true
+process_mode = 2
+visible = false
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+color = Color(0.313726, 0.313726, 0.313726, 0.666667)
+
+[node name="pauseMenu" parent="PauseManager/CanvasLayer/GreyOverlay" instance=ExtResource("8_epc66")]
 unique_name_in_owner = true
 visible = false
+layout_mode = 1
+
+[node name="deathScene" parent="PauseManager/CanvasLayer/GreyOverlay" instance=ExtResource("7_fi6s7")]
+unique_name_in_owner = true
+visible = false
+layout_mode = 1

@@ -54,7 +54,6 @@ func player_move(delta: float):
 # Show death screen
 func death():
 	you_died.emit()
-	queue_free()
 
 # Return gravity
 func _get_gravity() -> float:
