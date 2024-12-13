@@ -1,7 +1,9 @@
-[gd_scene load_steps=10 format=3 uid="uid://b5s7y47dt0i02"]
+[gd_scene load_steps=12 format=3 uid="uid://b5s7y47dt0i02"]
 
 [ext_resource type="Script" path="res://src/module/module-no-obstacle.gd" id="1_dhb8p"]
 [ext_resource type="PackedScene" uid="uid://d0ql7m13300bp" path="res://model-scenes/building/building-1.tscn" id="2_yeqlr"]
+[ext_resource type="PackedScene" uid="uid://cpid7x5487a76" path="res://model-scenes/building/building-2.tscn" id="3_2egj8"]
+[ext_resource type="PackedScene" uid="uid://c1pt3ru52da4c" path="res://model-scenes/building/building-3.tscn" id="4_8ixia"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0r5x"]
 albedo_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
@@ -28,7 +30,7 @@ data = PackedVector3Array(-2.5, 0.25, 1, 2.5, 0.25, 1, -2.5, -0.25, 1, 2.5, 0.25
 
 [node name="Ground" type="Node3D"]
 script = ExtResource("1_dhb8p")
-buildings = Array[PackedScene]([ExtResource("2_yeqlr")])
+buildings = Array[PackedScene]([ExtResource("2_yeqlr"), ExtResource("3_2egj8"), ExtResource("4_8ixia")])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 

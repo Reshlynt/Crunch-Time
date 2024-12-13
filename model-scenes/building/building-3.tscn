@@ -1,0 +1,55 @@
+[gd_scene load_steps=8 format=3 uid="uid://c1pt3ru52da4c"]
+
+[ext_resource type="PackedScene" uid="uid://btv7y8gefkpdt" path="res://model-scenes/building/Door.tscn" id="2_hbxxv"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_0pcgx"]
+albedo_color = Color(0.888509, 0.697889, 0.718036, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_q5sme"]
+material = SubResource("StandardMaterial3D_0pcgx")
+size = Vector3(2.5, 3, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_o4jjw"]
+
+[sub_resource type="BoxMesh" id="BoxMesh_0pv41"]
+material = SubResource("StandardMaterial3D_o4jjw")
+size = Vector3(2.5, 4, 3)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_3pyna"]
+albedo_color = Color(0.114897, 0.114897, 0.114897, 1)
+
+[sub_resource type="PrismMesh" id="PrismMesh_4gl87"]
+material = SubResource("StandardMaterial3D_3pyna")
+size = Vector3(2.5, 1, 3)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 1.5, 0)
+mesh = SubResource("BoxMesh_q5sme")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 2, 0)
+mesh = SubResource("BoxMesh_0pv41")
+
+[node name="Door" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 0.5, 1.501)
+
+[node name="Door2" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 0.5, 1.501)
+
+[node name="Door3" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 1, 0.5, -1.501)
+
+[node name="Door4" parent="StaticBody3D" instance=ExtResource("2_hbxxv")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, -1, 0.5, -1.501)
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -1.25, 4.5, 0)
+mesh = SubResource("PrismMesh_4gl87")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 1.25, 3.5, 0)
+mesh = SubResource("PrismMesh_4gl87")
