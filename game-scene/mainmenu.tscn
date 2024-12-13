@@ -35,6 +35,15 @@ text = "How To Play"
 layout_mode = 2
 text = "Quit"
 
+[node name="Label" type="Label" parent="."]
+layout_mode = 0
+offset_left = 355.0
+offset_top = 31.0
+offset_right = 805.0
+offset_bottom = 80.0
+text = "Crunch Time
+By Allen Jefferson, Joseph Preuss, Scott Do, Joshua Kolbusz"
+
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/aboutGame" to="." method="_on_about_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/howToPlay" to="." method="_on_how_to_play_pressed"]
