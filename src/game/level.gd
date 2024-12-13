@@ -12,6 +12,7 @@ var initObstacle = 0
 func _ready() -> void:
 	for n in AMOUNT:
 		spawnModule(n*OFFSET)
+	$backgroundMusic.play()
 
 # Spawns the road
 # First if block offers a grace period to prepare the player for the game

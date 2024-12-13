@@ -1,8 +1,9 @@
-[gd_scene load_steps=13 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=14 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
 [ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road/road.tscn" id="3_y4su2"]
 [ext_resource type="PackedScene" uid="uid://b5s7y47dt0i02" path="res://model-scenes/road/road-no_obstacle.tscn" id="4_4cdr3"]
+[ext_resource type="AudioStream" uid="uid://wfqq8duweow3" path="res://sound-effects/streetAmbiance.mp3.mp3" id="4_5y3nd"]
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://model-scenes/player/player.tscn" id="5_fg01p"]
 [ext_resource type="Script" path="res://game-scene/pause_manager.gd" id="5_hk7c5"]
 [ext_resource type="PackedScene" uid="uid://dcwc2wadg1kit" path="res://game-scene/deathScene.tscn" id="7_fi6s7"]
@@ -28,6 +29,12 @@ volumetric_fog_density = 0.06
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("2_k1c4c")
 modules = Array[PackedScene]([ExtResource("3_y4su2"), ExtResource("4_4cdr3")])
+
+[node name="backgroundMusic" type="AudioStreamPlayer3D" parent="Level"]
+unique_name_in_owner = true
+stream = ExtResource("4_5y3nd")
+volume_db = -4.948
+parameters/looping = true
 
 [node name="Camera3D" type="Camera3D" parent="."]
 transform = Transform3D(-0.00953605, 0.352272, -0.935849, 0.000766221, 0.935894, 0.352281, 0.999954, 0.00264231, -0.00919465, -6.087, 4.82889, 0)
