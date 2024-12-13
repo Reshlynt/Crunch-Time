@@ -15,6 +15,10 @@ run/main_scene="res://game-scene/mainmenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
+[autoload]
+
+GlobalSound="*res://sound-effects/global_sound.tscn"
+
 [dotnet]
 
 project/assembly_name="New Game Project"
@@ -27,6 +31,7 @@ import/blender/enabled=false
 
 obstacle="Things player should avoid."
 init-road="Initializer road."
+player=""
 
 [importer_defaults]
 

@@ -13,7 +13,7 @@
 height = 1.48202
 radius = 0.645286
 
-[node name="player" type="CharacterBody3D"]
+[node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_kkc12")
 
 [node name="MeshInstance3D" type="MeshInstance3D" parent="."]

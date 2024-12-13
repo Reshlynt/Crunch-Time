@@ -1,15 +1,17 @@
-[gd_scene load_steps=14 format=3 uid="uid://b87wi27ikd11u"]
+[gd_scene load_steps=16 format=3 uid="uid://b87wi27ikd11u"]
 
 [ext_resource type="Script" path="res://src/game/level.gd" id="2_k1c4c"]
 [ext_resource type="PackedScene" uid="uid://dtdss75q8ijqm" path="res://model-scenes/road/road.tscn" id="3_y4su2"]
 [ext_resource type="PackedScene" uid="uid://b5s7y47dt0i02" path="res://model-scenes/road/road-no_obstacle.tscn" id="4_4cdr3"]
 [ext_resource type="AudioStream" uid="uid://wfqq8duweow3" path="res://sound-effects/streetAmbiance.mp3.mp3" id="4_5y3nd"]
 [ext_resource type="PackedScene" uid="uid://bmpt3aib2l53i" path="res://model-scenes/player/player.tscn" id="5_fg01p"]
-[ext_resource type="Script" path="res://game-scene/pause_manager.gd" id="5_hk7c5"]
+[ext_resource type="Script" path="res://src/game/pause_manager.gd" id="5_hk7c5"]
 [ext_resource type="PackedScene" uid="uid://dcwc2wadg1kit" path="res://game-scene/deathScene.tscn" id="7_fi6s7"]
 [ext_resource type="AudioStream" uid="uid://3to8bp1h34tc" path="res://sound-effects/pausesound.mp3" id="8_7rgy7"]
 [ext_resource type="AudioStream" uid="uid://x0nww8r35l2p" path="res://sound-effects/resume sound.mp3" id="8_383qn"]
 [ext_resource type="PackedScene" uid="uid://cliceuxg3ykps" path="res://game-scene/pauseMenu.tscn" id="8_epc66"]
+[ext_resource type="Script" path="res://src/game/score_manager.gd" id="11_dva0v"]
+[ext_resource type="PackedScene" uid="uid://03c33a2c0thb" path="res://game-scene/score.tscn" id="12_xv6kt"]
 
 [sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
 ground_color = Color(0.639537, 0.823187, 0.992865, 1)
@@ -86,3 +88,11 @@ layout_mode = 1
 [node name="resumebuttonsound" type="AudioStreamPlayer3D" parent="PauseManager"]
 unique_name_in_owner = true
 stream = ExtResource("8_383qn")
+
+[node name="ScoreManager" type="Node" parent="."]
+script = ExtResource("11_dva0v")
+
+[node name="CanvasLayer" type="CanvasLayer" parent="ScoreManager"]
+
+[node name="ScoreText" parent="ScoreManager/CanvasLayer" instance=ExtResource("12_xv6kt")]
+unique_name_in_owner = true

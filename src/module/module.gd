@@ -1,6 +1,7 @@
 extends Node3D
 
 @onready var level = $"../" #Get the parent level node
+@onready var score = $"../../ScoreManager"
 var positions = [-2.5, 0, 2.5] # Valid positions
 @export var buildings: Array[PackedScene] = [] #Stores all modules for use in generation.
 @export var obstacles: Array[PackedScene] = [] #Stores all obstacles to spawn
@@ -43,3 +44,8 @@ func spawnObstacle():
 	num = rng.randi_range(0, positions.size() - 1)
 	instance.position.z = positions[num]
 	add_child(instance)
+
+
+func _on_score_wall_body_entered(body: Node3D) -> void:
+	if body.is_in_group("player"):
+		score.updateScore();
