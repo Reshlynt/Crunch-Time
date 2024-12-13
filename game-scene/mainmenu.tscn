@@ -42,7 +42,7 @@ offset_top = 31.0
 offset_right = 805.0
 offset_bottom = 80.0
 text = "Crunch Time
-By Allen Jefferson, Joseph Preuss, Scott Do, Joshua Kolbusz"
+By Baguette Cat"
 
 [connection signal="pressed" from="MarginContainer/VBoxContainer/Play POC" to="." method="_on_play_game_pressed"]
 [connection signal="pressed" from="MarginContainer/VBoxContainer/aboutGame" to="." method="_on_about_game_pressed"]

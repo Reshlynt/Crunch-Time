@@ -13,9 +13,10 @@ script = ExtResource("1_siw6q")
 
 [node name="Label" type="Label" parent="."]
 layout_mode = 0
-offset_right = 1152.0
+offset_right = 1171.0
 offset_bottom = 648.0
-text = "How To Play: Use W,A,S,D or Arrow Keys to Move, Press space to jump, these are the only controls that are available."
+scale = Vector2(0.983743, 1)
+text = "How To Play: Use W,A,S,D or Arrow Keys to Move, Press space to jump, and press the Escape key to pause. These are the only controls that are available."
 
 [node name="VBoxContainer" type="VBoxContainer" parent="."]
 layout_mode = 0
