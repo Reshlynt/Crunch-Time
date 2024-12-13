@@ -2,10 +2,6 @@
 
 [ext_resource type="PackedScene" uid="uid://bqx0mwmeksvlg" path="res://blender imports/donut.glb" id="1_ptxd1"]
 
-[sub_resource type="CylinderShape3D" id="CylinderShape3D_v2qeu"]
-height = 0.871791
-radius = 0.983404
-
 [sub_resource type="Animation" id="Animation_0kr23"]
 length = 0.001
 tracks/0/type = "position_3d"
@@ -40,18 +36,25 @@ _data = {
 "donut bounce": SubResource("Animation_qfdtn")
 }
 
-[node name="Donut" type="Node3D"]
+[sub_resource type="CylinderShape3D" id="CylinderShape3D_v2qeu"]
+height = 0.871791
+radius = 0.983404
+
+[node name="Donut" type="Node3D" groups=["obstacle"]]
 
 [node name="model" parent="." instance=ExtResource("1_ptxd1")]
 
-[node name="StaticBody3D" type="StaticBody3D" parent="."]
-
-[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
-transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000806093, 0.431201, 0.00685191)
-shape = SubResource("CylinderShape3D_v2qeu")
-
-[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+[node name="AnimationPlayer" type="AnimationPlayer" parent="model"]
+root_node = NodePath("../..")
 libraries = {
 "": SubResource("AnimationLibrary_w1uau")
 }
 autoplay = "donut bounce"
+
+[node name="StaticBody3D" type="StaticBody3D" parent="model"]
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="model/StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.000806093, 0.431201, 0.00685191)
+shape = SubResource("CylinderShape3D_v2qeu")
+
+[editable path="model"]
