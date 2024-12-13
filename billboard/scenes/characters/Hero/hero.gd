@@ -8,8 +8,8 @@ const RUN_FRAMES = 8
 const WALK_FRAMES = 12
 
 
-var RUN_SHEET = load("res://spritesheets/characters/Hero/HeroRun.png")
-var MAIN_SHEET = load("res://spritesheets/characters/Hero/HeroMain.png")
+var RUN_SHEET = load("res://field/spritesheets/characters/Hero/HeroRun.png")
+var MAIN_SHEET = load("res://field/spritesheets/characters/Hero/HeroMain.png")
 
 @export var animation_frame = 0
 var anim_row = 0
