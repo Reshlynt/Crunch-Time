@@ -75,13 +75,13 @@ visible = false
 unique_name_in_owner = true
 stream = ExtResource("8_383qn")
 
-[node name="ScoreManager" type="Node" parent="PauseManager"]
+[node name="ScoreManager" type="Node" parent="."]
 script = ExtResource("11_dva0v")
 
-[node name="CanvasLayer" type="CanvasLayer" parent="PauseManager/ScoreManager"]
+[node name="CanvasLayer" type="CanvasLayer" parent="ScoreManager"]
 layer = 0
 
-[node name="ScoreText" parent="PauseManager/ScoreManager/CanvasLayer" instance=ExtResource("12_xv6kt")]
+[node name="ScoreText" parent="ScoreManager/CanvasLayer" instance=ExtResource("12_xv6kt")]
 unique_name_in_owner = true
 
 [connection signal="you_died" from="player" to="PauseManager" method="_on_player_you_died"]
