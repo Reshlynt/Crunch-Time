@@ -1,8 +1,0 @@
-[gd_resource type="StandardMaterial3D" load_steps=2 format=3 uid="uid://cvlrrvjesh0xj"]
-
-[ext_resource type="Texture2D" uid="uid://clw4ec0ft1633" path="res://field/spritesheets/terrainTextures/Grass2.png" id="1_w6tdu"]
-
-[resource]
-albedo_texture = ExtResource("1_w6tdu")
-uv1_scale = Vector3(3, 2, 1)
-texture_filter = 0

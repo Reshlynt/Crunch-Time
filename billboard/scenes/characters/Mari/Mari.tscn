@@ -1,0 +1,25 @@
+[gd_scene load_steps=3 format=3 uid="uid://bex5ptq8axj2f"]
+
+[ext_resource type="Texture2D" uid="uid://c77molr5cp1rs" path="res://field/spritesheets/characters/FA_MEMORY_SECRETLAKE.png" id="1_trxqq"]
+
+
+[sub_resource type="CapsuleShape3D" id="CapsuleShape3D_jd8be"]
+radius = 0.147897
+height = 0.836268
+
+[node name="CharacterBody3D" type="CharacterBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.0545659, 0)
+
+[node name="Collider" type="CollisionShape3D" parent="."]
+transform = Transform3D(0.360364, 0, 0, 0, 0.360364, 0, 0, 0, 0.360364, 0, 0.0901313, 0)
+shape = SubResource("CapsuleShape3D_jd8be")
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(0.99919, 0, 0, 0, 0.99919, 0, 0, 0, 0.99919, 0.00816679, 0.097582, 0)
+billboard = 2
+alpha_cut = 1
+texture_filter = 0
+texture = ExtResource("1_trxqq")
+hframes = 12
+vframes = 8
+frame = 58

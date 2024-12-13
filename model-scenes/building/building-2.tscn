@@ -1,0 +1,74 @@
+[gd_scene load_steps=10 format=3 uid="uid://cpid7x5487a76"]
+
+[ext_resource type="PackedScene" uid="uid://dlqq226158i7s" path="res://model-scenes/building/window.tscn" id="1_lukiy"]
+[ext_resource type="PackedScene" uid="uid://btv7y8gefkpdt" path="res://model-scenes/building/Door.tscn" id="2_ddlif"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2ls0y"]
+albedo_color = Color(0.998399, 0.983753, 0.975585, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_vcpnf"]
+material = SubResource("StandardMaterial3D_2ls0y")
+size = Vector3(5, 3, 3)
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_tmi1u"]
+data = PackedVector3Array(-2.5, 1.5, 1.5, 2.5, 1.5, 1.5, -2.5, -1.5, 1.5, 2.5, 1.5, 1.5, 2.5, -1.5, 1.5, -2.5, -1.5, 1.5, 2.5, 1.5, -1.5, -2.5, 1.5, -1.5, 2.5, -1.5, -1.5, -2.5, 1.5, -1.5, -2.5, -1.5, -1.5, 2.5, -1.5, -1.5, 2.5, 1.5, 1.5, 2.5, 1.5, -1.5, 2.5, -1.5, 1.5, 2.5, 1.5, -1.5, 2.5, -1.5, -1.5, 2.5, -1.5, 1.5, -2.5, 1.5, -1.5, -2.5, 1.5, 1.5, -2.5, -1.5, -1.5, -2.5, 1.5, 1.5, -2.5, -1.5, 1.5, -2.5, -1.5, -1.5, 2.5, 1.5, 1.5, -2.5, 1.5, 1.5, 2.5, 1.5, -1.5, -2.5, 1.5, 1.5, -2.5, 1.5, -1.5, 2.5, 1.5, -1.5, -2.5, -1.5, 1.5, 2.5, -1.5, 1.5, -2.5, -1.5, -1.5, 2.5, -1.5, 1.5, 2.5, -1.5, -1.5, -2.5, -1.5, -1.5)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_t1vrx"]
+albedo_color = Color(0.25098, 0.239216, 0.223529, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_c2rww"]
+material = SubResource("StandardMaterial3D_t1vrx")
+size = Vector3(5, 0.3, 0.1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_7e4iu"]
+albedo_color = Color(0.25098, 0.239216, 0.223529, 1)
+
+[sub_resource type="BoxMesh" id="BoxMesh_7i3yh"]
+material = SubResource("StandardMaterial3D_7e4iu")
+size = Vector3(0.1, 0.3, 2.8)
+
+[node name="Node3D" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+mesh = SubResource("BoxMesh_vcpnf")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 1.5, 0)
+shape = SubResource("ConcavePolygonShape3D_tmi1u")
+
+[node name="Window37" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(1.15, 0, 0, 0, 0.9, 0, 0, 0, 0.5, -1.5, 0.993, 1.501)
+
+[node name="Window39" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(1.08675, 0, 0, 0, 0.925, 0, 0, 0, 0.5, 1.5, 0.993, 1.501)
+
+[node name="Door" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 1.501)
+
+[node name="Window67" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-1.15, 0, -4.37114e-08, 0, 0.9, 0, 1.00536e-07, 0, -0.5, -1.5, 0.993, -1.501)
+
+[node name="Window69" parent="StaticBody3D" instance=ExtResource("1_lukiy")]
+transform = Transform3D(-1.08675, 0, -4.37114e-08, 0, 0.925, 0, 9.50067e-08, 0, -0.5, 1.5, 0.993, -1.501)
+
+[node name="Door2" parent="StaticBody3D" instance=ExtResource("2_ddlif")]
+transform = Transform3D(-1, 0, -8.74228e-08, 0, 1, 0, 8.74228e-08, 0, -1, 0, 0.5, -1.501)
+
+[node name="RoofRim" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15, -1.45)
+mesh = SubResource("BoxMesh_c2rww")
+
+[node name="RoofRim3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -2.45, 3.15, 0)
+mesh = SubResource("BoxMesh_7i3yh")
+
+[node name="RoofRim4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 2.45, 3.15, 0)
+mesh = SubResource("BoxMesh_7i3yh")
+
+[node name="RoofRim2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 3.15, 1.45)
+mesh = SubResource("BoxMesh_c2rww")

@@ -1,0 +1,57 @@
+[gd_scene load_steps=10 format=3 uid="uid://btv7y8gefkpdt"]
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_2rulf"]
+albedo_color = Color(0.807843, 0.831373, 0.854902, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_kdw6t"]
+material = SubResource("StandardMaterial3D_2rulf")
+
+[sub_resource type="ConcavePolygonShape3D" id="ConcavePolygonShape3D_yxmgd"]
+data = PackedVector3Array(0.5, -0.5, 0, -0.5, -0.5, 0, 0.5, 0.5, 0, -0.5, -0.5, 0, -0.5, 0.5, 0, 0.5, 0.5, 0)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_hj4m4"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_mr5vf"]
+material = SubResource("StandardMaterial3D_hj4m4")
+size = Vector2(0.08, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_q3klk"]
+albedo_color = Color(0.286275, 0.313726, 0.341176, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_tucr6"]
+material = SubResource("StandardMaterial3D_q3klk")
+size = Vector2(0.05, 1)
+
+[sub_resource type="StandardMaterial3D" id="StandardMaterial3D_l3eym"]
+albedo_color = Color(0, 0, 0, 1)
+
+[sub_resource type="QuadMesh" id="QuadMesh_stuax"]
+material = SubResource("StandardMaterial3D_l3eym")
+size = Vector2(1, 0.1)
+
+[node name="Door" type="Node3D"]
+
+[node name="StaticBody3D" type="StaticBody3D" parent="."]
+
+[node name="MeshInstance3D" type="MeshInstance3D" parent="StaticBody3D"]
+mesh = SubResource("QuadMesh_kdw6t")
+
+[node name="CollisionShape3D" type="CollisionShape3D" parent="StaticBody3D"]
+shape = SubResource("ConcavePolygonShape3D_yxmgd")
+
+[node name="MeshInstance3D2" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, -0.5, 0, 0.00999999)
+mesh = SubResource("QuadMesh_mr5vf")
+
+[node name="DoorDivide" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0, 0.00999999)
+mesh = SubResource("QuadMesh_tucr6")
+
+[node name="MeshInstance3D3" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0.5, 0, 0.00999999)
+mesh = SubResource("QuadMesh_mr5vf")
+
+[node name="MeshInstance3D4" type="MeshInstance3D" parent="StaticBody3D"]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.5, 0.02)
+mesh = SubResource("QuadMesh_stuax")

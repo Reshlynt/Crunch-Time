@@ -1,0 +1,9 @@
+[gd_scene load_steps=3 format=3 uid="uid://c68ntkqvmds66"]
+
+[ext_resource type="PackedScene" uid="uid://b0iquwv0pfyrj" path="res://field/scenes/props/base/prop_base.tscn" id="1_0rtn2"]
+[ext_resource type="Texture2D" uid="uid://d0akjj3q77h6a" path="res://field/spritesheets/propTextures/tree2.png" id="2_7717c"]
+
+
+[node name="Tree_2" instance=ExtResource("1_0rtn2")]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.674341, 0)
+texture = ExtResource("2_7717c")
