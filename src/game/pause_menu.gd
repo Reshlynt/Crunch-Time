@@ -1,7 +1,6 @@
 extends Control
 
 
-
 # Resumes the game
 func _on_resume_pressed() -> void:
 	%pauseMenu.visible = false

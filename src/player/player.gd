@@ -25,8 +25,10 @@ func _physics_process(delta: float) -> void:
 	player_move(delta)
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
+		$"%JumpButton".play()
 	if death_sensing():
 		death()
+		
 
 func death_sensing() -> bool:
 	return death_sense.is_colliding() or death_ground.is_colliding() or death_left.is_colliding() or death_right.is_colliding()
@@ -36,9 +38,10 @@ func player_move(delta: float):
 	# Determine what input input has just been pressed.
 	if (Input.is_action_just_pressed("move_left")):
 		curPos -= 1
+		$LeftButton.play()
 	elif(Input.is_action_just_pressed("move_right")):
 		curPos += 1
-	
+		$RightButton.play()
 	# Restrain to boundaries. A bit archaic, but it works.
 	if (curPos < 0):
 		curPos += 1
