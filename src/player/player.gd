@@ -4,6 +4,11 @@ var curPos = 1 # Start at the center. Keep track.
 const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
 
+@export var animation_frame = 0
+var jumping : bool = false
+
+@onready var anim = $AnimationPlayer
+
 @onready var death_ground: RayCast3D = $DeathSense2
 
 @export var jump_height : float
@@ -16,16 +21,32 @@ const RIGHT: Vector2 = Vector2(1,0)
 
 signal you_died
 
+func _ready():
+	anim.play("run")
+
 # Goal: Make discrete movements. left, right, and center.
 func _physics_process(delta: float) -> void:
+	# check to see if the player is no longer jumping
+	if jumping and is_on_floor():
+		# no longer jumping
+		jumping = false
+		animation_frame = 0
+		anim.play("run")
+	
 	move_and_slide()
 	velocity.y -= _get_gravity() * delta
 	player_move(delta)
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
-		$"%JumpButton".play()
 	if death_ground.is_colliding():
 		you_died.emit()
+	
+	handle_animation()
+
+func handle_animation() -> void:
+	if (not jumping):
+		$Sprite3D.frame = animation_frame
+	
 
 # operates player movement
 func player_move(delta: float):
@@ -51,9 +72,14 @@ func _get_gravity() -> float:
 
 # Allow jumping
 func jump():
+	$"%JumpButton".play()
+	animation_frame = 0
+	anim.play("jump")
+	jumping = true
 	velocity.y = jump_velocity
 
 
 func _on_death_sense_body_entered(body: Node3D) -> void:
 	if body.is_in_group("obstacle"):
 		you_died.emit()
+		

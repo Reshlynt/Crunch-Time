@@ -1,11 +1,10 @@
-[gd_scene load_steps=8 format=3 uid="uid://bmpt3aib2l53i"]
+[gd_scene load_steps=12 format=3 uid="uid://bmpt3aib2l53i"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_kkc12"]
 [ext_resource type="AudioStream" uid="uid://chs02bsgch7c2" path="res://sound-effects/Jump.mp3" id="2_udocq"]
 [ext_resource type="AudioStream" uid="uid://iqhlfs305a4f" path="res://sound-effects/LeftMovement.mp3" id="3_80n2v"]
 [ext_resource type="AudioStream" uid="uid://d23b2rpk04kvo" path="res://sound-effects/RightMovement.mp3" id="4_a4g7u"]
-
-[sub_resource type="CapsuleMesh" id="CapsuleMesh_oeaee"]
+[ext_resource type="Texture2D" uid="uid://rgxk68ll1gac" path="res://2d Sprites Spreadsheet/Player/Hop Animation.png" id="5_owyux"]
 
 [sub_resource type="CapsuleShape3D" id="CapsuleShape3D_slnhb"]
 
@@ -13,11 +12,52 @@
 height = 1.48202
 radius = 0.645286
 
+[sub_resource type="Animation" id="Animation_nxigo"]
+resource_name = "run"
+length = 0.6
+loop_mode = 1
+step = 0.1
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0, 0.1, 0.2, 0.3, 0.4, 0.5, 0.6),
+"transitions": PackedFloat32Array(1, 1, 1, 1, 1, 1, 1),
+"update": 1,
+"values": [0, 1, 2, 3, 4, 5, 6]
+}
+
+[sub_resource type="Animation" id="Animation_qbiww"]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/path = NodePath(".:animation_frame")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/keys = {
+"times": PackedFloat32Array(0),
+"transitions": PackedFloat32Array(1),
+"update": 1,
+"values": [0]
+}
+
+[sub_resource type="Animation" id="Animation_uaqx5"]
+resource_name = "jump"
+step = 0.1
+
+[sub_resource type="AnimationLibrary" id="AnimationLibrary_8nnq3"]
+_data = {
+"RESET": SubResource("Animation_qbiww"),
+"jump": SubResource("Animation_uaqx5"),
+"run": SubResource("Animation_nxigo")
+}
+
 [node name="player" type="CharacterBody3D" groups=["player"]]
 script = ExtResource("1_kkc12")
-
-[node name="MeshInstance3D" type="MeshInstance3D" parent="."]
-mesh = SubResource("CapsuleMesh_oeaee")
 
 [node name="CollisionShape3D" type="CollisionShape3D" parent="."]
 shape = SubResource("CapsuleShape3D_slnhb")
@@ -42,5 +82,18 @@ shape = SubResource("CylinderShape3D_gqmi7")
 
 [node name="DeathSense2" type="RayCast3D" parent="."]
 target_position = Vector3(1, -0.48, 0)
+
+[node name="Sprite3D" type="Sprite3D" parent="."]
+transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.3, 0)
+pixel_size = 0.05
+billboard = 2
+texture_filter = 0
+texture = ExtResource("5_owyux")
+hframes = 7
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="."]
+libraries = {
+"": SubResource("AnimationLibrary_8nnq3")
+}
 
 [connection signal="body_entered" from="DeathSense" to="." method="_on_death_sense_body_entered"]
