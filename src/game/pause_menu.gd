@@ -7,7 +7,6 @@ func _ready() -> void:
 # Resumes the game
 func _on_resume_pressed() -> void:
 	%pauseMenu.visible = false
-	%GreyOverlay.visible = false
 	get_tree().paused = false
 	$pausesound.play()
 # Returns to the main menu

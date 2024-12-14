@@ -15,9 +15,10 @@ run/main_scene="res://game-scene/mainmenu.tscn"
 config/features=PackedStringArray("4.3", "Forward Plus")
 config/icon="res://icon.svg"
 
-[autoload]
+[display]
 
-GlobalSound="*res://sound-effects/global_sound.tscn"
+window/size/viewport_width=1600
+window/size/viewport_height=900
 
 [dotnet]
 
