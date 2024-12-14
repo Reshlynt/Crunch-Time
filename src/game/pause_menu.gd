@@ -9,8 +9,10 @@ func _on_resume_pressed() -> void:
 	%pauseMenu.visible = false
 	get_tree().paused = false
 	$pausesound.play()
+
 # Returns to the main menu
 func _on_back_to_main_menu_pressed() -> void:
+	get_tree().paused = false
 	get_tree().change_scene_to_file("res://game-scene/mainmenu.tscn")
 	
 
