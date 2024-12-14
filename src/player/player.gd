@@ -8,6 +8,11 @@ const RIGHT: Vector2 = Vector2(1,0)
 var jumping : bool = false
 
 @onready var anim = $AnimationPlayer
+@onready var sprite = $Sprite3D
+var runSheet = load("2d Sprites Spreadsheet/Player/Hop Animation.png")
+var jumpSheet = load("2d Sprites Spreadsheet/Player/Jumping.png")
+
+var jumptimeout = 0
 
 @onready var death_ground: RayCast3D = $DeathSense2
 
@@ -28,10 +33,17 @@ func _ready():
 func _physics_process(delta: float) -> void:
 	# check to see if the player is no longer jumping
 	if jumping and is_on_floor():
-		# no longer jumping
-		jumping = false
-		animation_frame = 0
-		anim.play("run")
+		if jumptimeout <= 0:
+			# no longer jumping
+			
+			jumping = false
+			sprite.pixel_size = 0.05
+			sprite.texture = runSheet
+			sprite.hframes = 7
+			animation_frame = 0
+			anim.play("run")
+		else:
+			jumptimeout-= 1
 	
 	move_and_slide()
 	velocity.y -= _get_gravity() * delta
@@ -44,8 +56,7 @@ func _physics_process(delta: float) -> void:
 	handle_animation()
 
 func handle_animation() -> void:
-	if (not jumping):
-		$Sprite3D.frame = animation_frame
+	$Sprite3D.frame = animation_frame
 	
 
 # operates player movement
@@ -72,7 +83,11 @@ func _get_gravity() -> float:
 
 # Allow jumping
 func jump():
+	jumptimeout = 5
 	$"%JumpButton".play()
+	sprite.pixel_size = 0.03
+	sprite.texture = jumpSheet
+	sprite.hframes = 16
 	animation_frame = 0
 	anim.play("jump")
 	jumping = true
