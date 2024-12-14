@@ -1,4 +1,4 @@
-[gd_scene load_steps=15 format=3 uid="uid://dtdss75q8ijqm"]
+[gd_scene load_steps=16 format=3 uid="uid://dtdss75q8ijqm"]
 
 [ext_resource type="Script" path="res://src/module/module.gd" id="1_2rwur"]
 [ext_resource type="PackedScene" uid="uid://cydrboxwcuhsn" path="res://model-scenes/obstacle/car.tscn" id="2_fjmds"]
