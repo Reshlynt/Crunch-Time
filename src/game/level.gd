@@ -1,7 +1,7 @@
 extends Node3D
 
 @export var modules: Array[PackedScene] = [] #Stores all modules for use in generation.
-const AMOUNT: int = 25  # How many in a given scene
+const AMOUNT: int = 30  # How many in a given scene
 var rng = RandomNumberGenerator.new()
 var OFFSET = 5 #Does not spawn on top of each other.
 

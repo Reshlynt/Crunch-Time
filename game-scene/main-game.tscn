@@ -13,20 +13,27 @@
 [ext_resource type="Script" path="res://src/game/score_manager.gd" id="11_dva0v"]
 [ext_resource type="PackedScene" uid="uid://03c33a2c0thb" path="res://game-scene/score.tscn" id="12_xv6kt"]
 
-[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_vlrfn"]
-ground_color = Color(0.639537, 0.823187, 0.992865, 1)
-energy_multiplier = 20.48
+[sub_resource type="PhysicalSkyMaterial" id="PhysicalSkyMaterial_tdmv7"]
+turbidity = 0.05
+sun_disk_scale = 0.0
+ground_color = Color(0.314802, 0.384444, 0.502329, 1)
+energy_multiplier = 1.5
 
-[sub_resource type="Sky" id="Sky_f5dp2"]
-sky_material = SubResource("PhysicalSkyMaterial_vlrfn")
+[sub_resource type="Sky" id="Sky_ljecr"]
+sky_material = SubResource("PhysicalSkyMaterial_tdmv7")
 
-[sub_resource type="Environment" id="Environment_300yk"]
+[sub_resource type="Environment" id="Environment_7h13j"]
 background_mode = 2
-sky = SubResource("Sky_f5dp2")
+sky = SubResource("Sky_ljecr")
 volumetric_fog_enabled = true
-volumetric_fog_density = 0.06
+volumetric_fog_density = 0.038
+volumetric_fog_albedo = Color(0.807353, 0.859127, 0.955012, 1)
+volumetric_fog_length = 120.89
 
 [node name="main2" type="Node3D"]
+
+[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
+environment = SubResource("Environment_7h13j")
 
 [node name="Level" type="Node3D" parent="."]
 script = ExtResource("2_k1c4c")
@@ -50,10 +57,8 @@ jump_time_to_peak = 0.5
 jump_time_to_descent = 0.2
 
 [node name="DirectionalLight3D" type="DirectionalLight3D" parent="."]
-transform = Transform3D(-2.72778e-08, 0.992941, -0.118612, 3.41556e-08, 0.118612, 0.992941, 1, 2.3034e-08, -3.715e-08, -5.27885, 3, 0)
-
-[node name="WorldEnvironment" type="WorldEnvironment" parent="."]
-environment = SubResource("Environment_300yk")
+transform = Transform3D(0.141035, 0.960622, -0.239406, 0.0175919, 0.239353, 0.970773, 0.989848, -0.141125, 0.016858, -5.27885, 3, 0)
+light_energy = 2.053
 
 [node name="PauseManager" type="Node" parent="."]
 script = ExtResource("5_hk7c5")
