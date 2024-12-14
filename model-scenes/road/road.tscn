@@ -6,6 +6,7 @@
 [ext_resource type="PackedScene" uid="uid://c4pe7orfaetnm" path="res://model-scenes/obstacle/donut.tscn" id="3_34e5y"]
 [ext_resource type="PackedScene" uid="uid://cpid7x5487a76" path="res://model-scenes/building/building-2.tscn" id="3_tnlev"]
 [ext_resource type="PackedScene" uid="uid://c1pt3ru52da4c" path="res://model-scenes/building/building-3.tscn" id="4_03ivh"]
+[ext_resource type="PackedScene" uid="uid://dmlp5kwlrv45y" path="res://model-scenes/obstacle/cone.tscn" id="7_aapo4"]
 
 [sub_resource type="StandardMaterial3D" id="StandardMaterial3D_e0r5x"]
 albedo_color = Color(0.0562916, 0.0562916, 0.0562916, 1)
@@ -36,7 +37,7 @@ size = Vector3(0.1, 3, 9)
 [node name="Ground" type="Node3D"]
 script = ExtResource("1_2rwur")
 buildings = Array[PackedScene]([ExtResource("2_y2yqu"), ExtResource("3_tnlev"), ExtResource("4_03ivh")])
-obstacles = Array[PackedScene]([ExtResource("2_fjmds"), ExtResource("3_34e5y")])
+obstacles = Array[PackedScene]([ExtResource("2_fjmds"), ExtResource("3_34e5y"), ExtResource("7_aapo4")])
 
 [node name="StaticBody3D" type="StaticBody3D" parent="."]
 
