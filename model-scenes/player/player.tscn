@@ -40,4 +40,7 @@ collision_mask = 2
 transform = Transform3D(1, 0, 0, 0, 1, 0, 0, 0, 1, 0, 0.450263, 0)
 shape = SubResource("CylinderShape3D_gqmi7")
 
+[node name="DeathSense2" type="RayCast3D" parent="."]
+target_position = Vector3(1, -0.48, 0)
+
 [connection signal="body_entered" from="DeathSense" to="." method="_on_death_sense_body_entered"]

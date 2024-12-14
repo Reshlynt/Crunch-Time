@@ -4,9 +4,7 @@ var curPos = 1 # Start at the center. Keep track.
 const LEFT: Vector2 = Vector2(-1,0)
 const RIGHT: Vector2 = Vector2(1,0)
 
-#@onready var death_ground: RayCast3D = $DeathSense2
-#@onready var death_left: RayCast3D = $DeathLeft
-#@onready var death_right: RayCast3D = $DeathRight
+@onready var death_ground: RayCast3D = $DeathSense2
 
 @export var jump_height : float
 @export var jump_time_to_peak : float
@@ -26,6 +24,8 @@ func _physics_process(delta: float) -> void:
 	if Input.is_action_just_pressed("jump") and is_on_floor():
 		jump()
 		$"%JumpButton".play()
+	if death_ground.is_colliding():
+		you_died.emit()
 
 # operates player movement
 func player_move(delta: float):
